@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniDoz | Panel sterowania robota</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <header class="topbar">
+        <div class="logo-area">
+            <img src="./img/unidoz_logo.png" alt="UniDoz">
+            <span id="panelTitle">Panel Sterowania</span>
+        </div>
+
+        <div class="system-dots" aria-label="Lampki statusu systemu">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green active"></div>
+        </div>
+
+        <div class="language-switcher">
+            <select class="language-select" id="languageSelect">
+                <option value="pl">Polski</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Francais</option>
+                <option value="es">Espanol</option>
+                <option value="ro">Romana</option>
+                <option value="bg">Bulgarski</option>
+                <option value="hu">Magyar</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        <section class="main-panel">
+            <div class="priority-grid">
+                <div class="info-tile status-tile">
+                    <div class="card-title" id="systemStatusTitle">Status systemu</div>
+                    <div class="status-badge">
+                        <img src="./img/check.svg" alt="">
+                        <div>
+                            <strong id="systemReady">SYSTEM GOTOWY</strong>
+                            <small id="noErrors">Brak błędów</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-tile">
+                    <div class="card-title" id="workModeTitle">Tryb pracy</div>
+                    <div class="mode-display">
+                        <img id="manualModeImg" src="./img/hand-pointer.svg" alt="">
+                        <span id="manualMode">Tryb Manualny</span>
+                    </div>
+                </div>
+
+                <div class="info-tile battery-tile">
+                    <div class="card-title" id="batteryTitle">Stan baterii</div>
+
+                    <div class="battery-display battery-full">
+                        <div class="battery-icon">
+                            <div class="battery-fill"></div>
+                        </div>
+
+                        <div>
+                            <strong id="batteryState">NAŁADOWANA</strong>
+                            <small id="batteryInfo">Bateria gotowa do pracy</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <span id="startProgramTitle">Start Programu</span>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-prog active">
+                    <img id="program1" src="./img/play.svg" alt="">
+                    <span id="btnProgram1">Program 1</span>
+                </button>
+
+                <button class="btn-prog">
+                    <img id="program2" src="./img/play.svg" alt="">
+                    <span id="btnProgram2">Program 2</span>
+                </button>
+
+                <button class="btn-prog">
+                    <img id="program3" src="./img/play.svg" alt="">
+                    <span id="btnProgram3">Program 3</span>
+                </button>
+            </div>
+
+            <div class="section-heading danger-heading">
+                <span id="operationControlTitle">Kontrola operacji</span>
+            </div>
+
+            <div class="action-grid">
+                <button class="btn-action btn-stop">
+                    <img id="stopIcon" src="./img/stop.svg" alt="">
+                    <span id="stopBtn">STOP</span>
+                </button>
+
+                <button class="btn-action btn-pause">
+                    <img id="pauseIcon" src="./img/pause.svg" alt="">
+                    <span id="pauseBtn">PAUZA</span>
+                </button>
+
+                <button class="btn-action btn-reset">
+                    <img id="resetIcon" src="./img/reset.svg" alt="">
+                    <span id="resetBtn">RESET</span>
+                </button>
+
+                <button class="btn-action btn-water">
+                    <img id="waterIcon" src="./img/droplet.svg" alt="">
+                    <span id="waterBtn">SPUST WODY</span>
+                </button>
+            </div>
+        </section>
+
+        <aside class="side-panel">
+            <div class="card-title" id="settingsTitle">Ustawienia parametrów</div>
+
+            <div class="settings-row">
+                <button class="config-btn">
+                    <img src="./img/gear.svg" alt="">
+                    <span id="settingsProgram1">Prog 1</span>
+                </button>
+
+                <button class="config-btn">
+                    <img src="./img/gear.svg" alt="">
+                    <span id="settingsProgram2">Prog 2</span>
+                </button>
+
+                <button class="config-btn">
+                    <img src="./img/gear.svg" alt="">
+                    <span id="settingsProgram3">Prog 3</span>
+                </button>
+
+                <button class="config-btn">
+                    <img src="./img/sliders.svg" alt="">
+                    <span id="advancedBtn">Zaawansowane</span>
+                </button>
+            </div>
+
+            <div class="robot-visual">
+                <div class="dim left-top">1200 <span class="unitMm">mm</span></div>
+                <div class="dim left-bottom">1200 <span class="unitMm">mm</span></div>
+                <div class="dim right">1200 <span class="unitMm">mm</span></div>
+                <div class="dim bottom">1200 <span class="unitMm">mm</span></div>
+
+                <div class="blueprint-box">
+                    <img id="robotImage"
+                         src="https://unidoz.com/images/com_hikashop/upload/thumbnails/666x1000f/robot_p22_1129484134.webp"
+                         alt="Robot przemysłowy">
+                </div>
+            </div>
+
+            <div class="work-time" id="workTime">
+                Czas pracy robota: 2H : 1M
+            </div>
+        </aside>
+    </main>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
