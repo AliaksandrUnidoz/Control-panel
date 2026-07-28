@@ -1,3 +1,4 @@
+const body = document.body
 const translations = {
     pl: {
         panelTitle: "Panel Sterowania",
@@ -224,14 +225,104 @@ const translations = {
         robotAlt: "Ipari robot"
     }
 };
+const redDot = document.querySelector('#redDot')
+const yellowDot = document.querySelector('#yellowDot')
+const greenDot = document.querySelector('#greenDot')
+const errorDescription = document.querySelector('#error-description')
+const noErrors = document.querySelector('#noErrors')
+const autoBtns = document.querySelector('#auto-btns')
+const autoBtn1 = document.querySelector('#auto-btn-1')
+const autoBtn2 = document.querySelector('#auto-btn-2')
+const autoBtn3 = document.querySelector('#auto-btn-3')
+const configButtons = document.querySelectorAll(".config-btn");
+const settingsPrograms = document.querySelectorAll(".settings-programs");
+const closeButtons = document.querySelectorAll(".btn-popup");
 
+// connection with PLC //
+// $(document).ready(function(){
+//     $.ajaxSetup({ cache: false });
+
+//     setInterval(updateData, 500)
+
+//     $('#stopBtn').click(function() {
+//         stopRobot()
+//     })
+//     $('#pauseBtn').click(function() {
+//         updateData().then(vars=> {
+//             pauseRobot(vars)
+//         })
+//     })
+//     $('#resetBtn').click(function() {
+//         resetRobot()
+//     })
+//     $('#drainBtn').on('mousedown', function() {
+//         drainWater();
+//     });
+//     $('#drainBtn').on('touchstart', function() {
+//         drainWater();
+//     });
+//     $('#drainBtn').on('mouseup', function() {
+//         stopDrainWater();
+//     });
+//     $('#drainBtn').on('touchend', function() {
+//         stopDrainWater();
+//     });
+//     $('#auto-btns').click(function(e) {
+//         autoPrograms(e)
+//     })
+//     $("#settings-program-form1").submit(function(event) {
+//         event.preventDefault()
+//         submitForm(1)
+//     });
+//     $("#settings-program-form2").submit(function(event) {
+//         event.preventDefault()
+//         submitForm(2)
+//     });
+//     $("#settings-program-form3").submit(function(event) {
+//         event.preventDefault()
+//         submitForm(3)
+//     });
+//     $("#settings-robot-form").submit(function(event) {
+//         event.preventDefault()
+//         submitRobotForm()
+//     });
+// })
+
+function updateData() {
+    return $.get("IOVariablesUpdate.htm").then(result => {
+        const variables = parsePLCVariables(result)
+        error(variables)
+        lights(variables)
+        positionRobot(variables)
+        stateBtns(variables)
+        return variables;
+    })
+}
+// function for change lights on the panel based on PLC variables
+function lights(variables) {    
+    if(variables[0] == 1) {
+        redDot.classList.add('active')
+    } else {
+        redDot.classList.remove('active')
+    }
+    if(variables[1] == 1) {
+        yellowDot.classList.add('active')
+    } else {
+        yellowDot.classList.remove('active')
+    }
+    if(variables[2] == 1) {
+        greenDot.classList.add('active')
+    } else {
+        greenDot.classList.remove('active')
+    }
+}
+// parth of code for change language on the panel
 function setText(id, value) {
     const element = document.getElementById(id);
     if (element) {
         element.textContent = value;
     }
 }
-
 function changeLanguage(lang) {
     const dictionary = translations[lang] || translations.pl;
 
@@ -242,7 +333,6 @@ function changeLanguage(lang) {
             });
             return;
         }
-
         if (key === "robotAlt") {
             const robotImage = document.getElementById("robotImage");
             if (robotImage) {
@@ -250,10 +340,8 @@ function changeLanguage(lang) {
             }
             return;
         }
-
         setText(key, value);
     });
-
     document.documentElement.lang = lang;
 }
 
@@ -330,7 +418,6 @@ function initLanguageSwitcher() {
         }
     });
 }
-
 function initProgramButtons() {
     const programButtons = document.querySelectorAll(".btn-prog");
 
@@ -344,8 +431,253 @@ function initProgramButtons() {
         });
     });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     initLanguageSwitcher();
     initProgramButtons();
+});
+// function for change error description on the panel based on PLC variables
+const errorDescriptionArray_pl = ['Awaryjne zatrzymanie',
+                                'Niskie napięcie akumulatora',
+                                'Przedni prawy czujnik poza zakresem',
+                                'Zbyt mały dystans przed robotem',
+                                'Zbyt mały dystans po prawej stronie robota',
+                                'Błąd silnika prawego koła',
+                                'Błąd silnika lewego koła',
+                                'Błąd silnika ramienia'
+]
+
+const errorDescriptionArray_en = ['Emergency stop',
+                                'Low battery voltage',
+                                'Front right sensor out of range',
+                                'Too small distance in front of the robot',
+                                'Too small distance on the right side of the robot',
+                                'Right wheel motor error',
+                                'Left wheel motor error',
+                                'Arm motor error'
+]
+
+const errorDescriptionArray_de = ['Not-Aus',
+                                'Niedrige Batteriespannung',
+                                'Front rechter Sensor ausserhalb des Bereichs',
+                                'Zu geringer Abstand vor dem Roboter',
+                                'Zu geringer Abstand auf der rechten Seite des Roboters',
+                                'Fehler des rechten Radmotors',
+                                'Fehler des linken Radmotors',
+                                'Fehler des Arm-Motors'
+]
+
+const errorDescriptionArray_fr = ['Arrêt d\'urgence',
+                                'Basse tension de batterie',
+                                'Capteur avant droit hors de portée',
+                                'Distance trop courte devant le robot',
+                                'Distance trop courte à droite du robot',
+                                'Défaillance du moteur de la roue droite',
+                                'Défaillance du moteur de la roue gauche',
+                                'Défaillance du moteur du bras'
+]
+
+const errorDescriptionArray_es = ['Parada de emergencia',
+                                'Bajo voltaje de la batería',
+                                'Sensor delantero derecho fuera de rango',
+                                'Distancia demasiado corta delante del robot',
+                                'Distancia demasiado corta a la derecha del robot',
+                                'Error del motor de la rueda derecha',
+                                'Error del motor de la rueda izquierda',
+                                'Error del motor del brazo'
+]
+
+const errorDescriptionArray_ro = ['Oprire de urgență',
+                                'Tensiune scăzută a bateriei',
+                                'Senzor frontal drept în afara domeniului',
+                                'Distanță prea mică în fața robotului',
+                                'Distanță prea mică în partea dreaptă a robotului',
+                                'Eroare a motorului roții drepte',
+                                'Eroare a motorului roții stângi',
+                                'Eroare a motorului brațului'
+]
+
+const errorDescriptionArray_bg = ['Аварийно спиране',
+                                'Ниско напрежение на батерията',
+                                'Преден десен сензор извън обхвата',
+                                'Твърде малко разстояние пред робота',
+                                'Твърде малко разстояние вдясно от робота',
+                                'Грешка на двигателя на дясното колело',
+                                'Грешка на двигателя на лявото колело',
+                                'Грешка на двигателя на ръката'
+]
+
+const errorDescriptionArray_hu = ['Vészleállítás',
+                                'Alacsony akkumulátorfeszültség',
+                                'A jobb elülső érzékelő a tartományon kívül van',
+                                'Túl kicsi távolság a robot előtt',
+                                'Túl kicsi távolság a robot jobb oldalán',
+                                'A jobb kerékmotor hiba',
+                                'A bal kerékmotor hiba',
+                                'A kar motorjának hibája'
+]
+
+function error(variables) {
+    if (variables[7] == 100) {
+        errorDescription.textContent = 'SYSTEM GOTOWY'
+        noErrors.textContent = 'Brak błędów'
+    } else {
+        errorDescription.classList.add('Błąd')
+        let item = parseInt(variables[8])
+        let array =  errorDescriptionArray_pl
+        if (document.documentElement.lang === 'en') {
+            array = errorDescriptionArray_en
+        } else if (document.documentElement.lang === 'de') {
+            array = errorDescriptionArray_de
+        } else if (document.documentElement.lang === 'fr') {
+            array = errorDescriptionArray_fr
+        } else if (document.documentElement.lang === 'es') {
+            array = errorDescriptionArray_es
+        } else if (document.documentElement.lang === 'ro') {
+            array = errorDescriptionArray_ro
+        } else if (document.documentElement.lang === 'bg') {
+            array = errorDescriptionArray_bg
+        } else if (document.documentElement.lang === 'hu') {
+            array = errorDescriptionArray_hu
+        }
+        errorDescription.textContent = array[item]
+    
+    }
+}
+// function for send PLC variable to start auto program based on button click
+function autoPrograms(e) {
+    if (e.target == autoBtn1) {
+        const url = 'IOVariables.htm';
+        const sdata = '"virtualPilot".swProgram1' + '=' + 1;
+        $.post(url,sdata);
+        autoBtns.style.pointerEvents = 'none'
+    }
+    if (e.target == autoBtn2) {
+        const url = 'IOVariables.htm';
+        const sdata = '"virtualPilot".swProgram2' + '=' + 1;
+        $.post(url,sdata);
+        autoBtns.style.pointerEvents = 'none'
+    }
+    if (e.target == autoBtn3) {
+        const url = 'IOVariables.htm';
+        const sdata = '"virtualPilot".swProgram3' + '=' + 1;
+        $.post(url,sdata);
+        autoBtns.style.pointerEvents = 'none'
+    }
+} 
+// functions STOP, PAUSE, RESET, DRAIN WATER for send PLC variable based on button click
+function stopRobot() {
+    const url = 'IOVariables.htm'; 
+    let postData = [];
+    postData.push(escape('"virtualPilot".swEStop') + '=' + 1)
+    // postData.push(escape('"DB_MAIN".START') + '=' + 0)
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+    autoBtns.style.pointerEvents = 'auto'
+    let postDataAuto = [];
+    postDataAuto.push(escape('"virtualPilot".swProgram1') + '=' + 0)
+    postDataAuto.push(escape('"virtualPilot".swProgram2') + '=' + 0)
+    postDataAuto.push(escape('"virtualPilot".swProgram3') + '=' + 0)
+    const sdataAuto = postDataAuto.join('&');
+    $.post(url,sdataAuto);
+}
+function pauseRobot(vars) {
+    const url = 'IOVariables.htm'; 
+    let postData = [];
+    if (vars[9] == 1) {
+        // update style for pauze 
+        pauseBtn.classList.add('pause')
+        pauseBtn.classList.remove('wait') 
+        pauseBtn.classList.remove('continue') 
+        pauseBtn.textContent = 'Pauza'
+        postData.push(escape('"virtualPilot".swStop') + '=' + 0)
+        clickedPauseBtn = 0
+    } else {
+        // update style for wait 
+        pauseBtn.classList.add('wait') 
+        pauseBtn.classList.remove('continue') 
+        pauseBtn.classList.remove('pause')
+        pauseBtn.textContent = 'Czekaj'
+        clickedPauseBtn = 1
+        postData.push(escape('"virtualPilot".swStop') + '=' + 1)
+    }
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+}
+function resetRobot() {
+    const url = 'IOVariables.htm'; 
+    let postData = [];
+    postData.push(escape('"virtualPilot".swInit') + '=' + 1)
+    // TODO: set to 0 after response
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+}
+function drainWater() {
+    const url = 'IOVariables.htm'; 
+    let postData = [];
+    postData.push(escape('"virtualPilot".swDrainWater') + '=' + 1)
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+}
+function stopDrainWater() {
+    const url = 'IOVariables.htm'; 
+    let postData = [];
+    postData.push(escape('"virtualPilot".swDrainWater') + '=' + 0)
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+}
+
+// functions for open and close settings windows based on button click
+function closeAllWindows() {
+    settingsPrograms.forEach(window => {
+        window.classList.remove("active-program");
+    });
+    configButtons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+}
+
+configButtons.forEach((button,index)=>{
+    button.addEventListener("click",()=>{
+        const popup = settingsPrograms[index];
+        if(popup.classList.contains("active-program")){
+            closeAllWindows();
+        }else{
+            closeAllWindows();
+            popup.classList.add("active-program");
+            button.classList.add("active");
+        }
+    });
+});
+
+closeButtons.forEach(button=>{
+    button.addEventListener("click",()=>{
+        closeAllWindows();
+    });
+});
+settingsPrograms.forEach(windowBox=>{
+    const header = windowBox.querySelector(".title-popup");
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let left = 0;
+    let top = 0;
+    header.style.cursor = "grab";
+    header.addEventListener("mousedown",(e)=>{
+        isDragging = true;
+        header.style.cursor = "grabbing";
+        left = windowBox.offsetLeft;
+        top = windowBox.offsetTop;
+        startX = e.clientX;
+        startY = e.clientY;
+    });
+    document.addEventListener("mouseup",()=>{
+        isDragging = false;
+        header.style.cursor = "grab";
+    });
+    document.addEventListener("mousemove",(e)=>{
+        if(!isDragging) return;
+        e.preventDefault();
+        windowBox.style.left = left + (e.clientX-startX) + "px";
+        windowBox.style.top = top + (e.clientY-startY) + "px";
+    });
 });

@@ -16,9 +16,9 @@
         </div>
 
         <div class="system-dots" aria-label="Lampki statusu systemu">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green active"></div>
+            <div id="redDot" class="dot red"></div>
+            <div id="yellowDot" class="dot yellow"></div>
+            <div id="greenDot" class="dot green"></div>
         </div>
 
         <div class="language-switcher">
@@ -59,7 +59,7 @@
                     <div class="status-badge">
                         <img src="./img/check.svg" alt="">
                         <div>
-                            <strong id="systemReady">SYSTEM GOTOWY</strong>
+                            <strong id="error-description">SYSTEM GOTOWY</strong>
                             <small id="noErrors">Brak błędów</small>
                         </div>
                     </div>
@@ -93,18 +93,18 @@
                 <span id="startProgramTitle">Start Programu</span>
             </div>
 
-            <div class="btn-group">
-                <button class="btn-prog active">
+            <div id="auto-btns" class="btn-group">
+                <button id="auto-btn-1" class="btn-prog active">
                     <img id="program1" src="./img/play.svg" alt="">
                     <span id="btnProgram1">Program 1</span>
                 </button>
 
-                <button class="btn-prog">
+                <button id="auto-btn-2" class="btn-prog">
                     <img id="program2" src="./img/play.svg" alt="">
                     <span id="btnProgram2">Program 2</span>
                 </button>
 
-                <button class="btn-prog">
+                <button id="auto-btn-3" class="btn-prog">
                     <img id="program3" src="./img/play.svg" alt="">
                     <span id="btnProgram3">Program 3</span>
                 </button>
@@ -115,22 +115,22 @@
             </div>
 
             <div class="action-grid">
-                <button class="btn-action btn-stop">
+                <button id="stopBtn" class="btn-action btn-stop">
                     <img id="stopIcon" src="./img/stop.svg" alt="">
                     <span id="stopBtn">STOP</span>
                 </button>
 
-                <button class="btn-action btn-pause">
+                <button id="pauseBtn" class="btn-action btn-pause">
                     <img id="pauseIcon" src="./img/pause.svg" alt="">
                     <span id="pauseBtn">PAUZA</span>
                 </button>
 
-                <button class="btn-action btn-reset">
+                <button id="resetBtn" class="btn-action btn-reset">
                     <img id="resetIcon" src="./img/reset.svg" alt="">
                     <span id="resetBtn">RESET</span>
                 </button>
 
-                <button class="btn-action btn-water">
+                <button id="drainBtn" class="btn-action btn-water">
                     <img id="waterIcon" src="./img/droplet.svg" alt="">
                     <span id="waterBtn">SPUST WODY</span>
                 </button>
@@ -160,6 +160,155 @@
                     <img src="./img/sliders.svg" alt="">
                     <span id="advancedBtn">Zaawansowane</span>
                 </button>
+            </div>
+            <!-- Settings for programs -->
+            <div class="settings-programs">
+                <button class="btn-popup">X</button>
+                <div class="title-popup" id="title-1">Zmiana parametrów programy N1</div>
+                <form id="settings-program-form1" class="settings-program">
+                    <label for="param1-1">Pozycja robota [mm]:</label>
+                    <input id="param1-1" name="param1" type="number" value=':="dbSettings".settingProgam1.setRightDistance:'>
+                    <label for="param1-2">Prędkość robota:</label>
+                    <input id="param1-2" name="param2" type="number" value=':="dbSettings".settingProgam1.setVelocity:'>
+                    <label for="param1-3">Prędkość ramia:</label>
+                    <input id="param1-3" name="param3" type="number" value=':="dbSettings".settingProgam1.setWashVelocity:'>
+                    <label for="param1-4">Prawa pozycja ramia [mm]:</label>
+                    <input id="param1-4" name="param4" type="number" value=':="dbSettings".settingProgam1.setWashRightPosition:'>
+                    <label for="param1-5">Lewa pozycja ramia [mm]:</label>
+                    <input id="param1-5"  name="param5" type="number" value=':="dbSettings".settingProgam1.setWashLeftPosition:'>
+                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                </form>
+            </div>
+            <div class="settings-programs">
+                <button class="btn-popup">X</button>
+                <div class="title-popup">Zmiana parametrów programy N2</div>
+                <form id="settings-program-form2" class="settings-program">
+                    <label for="param2-1">Pozycja robota [mm]:</label>
+                    <input id="param2-1" name="param1" type="number" value=':="dbSettings".settingProgam2.setRightDistance:'>
+                    <label for="param2-2">Prędkość robota:</label>
+                    <input id="param2-2" name="param2" type="number" value=':="dbSettings".settingProgam2.setVelocity:'>
+                    <label for="param2-3">Prędkość ramia:</label>
+                    <input id="param2-3" name="param3" type="number" value=':="dbSettings".settingProgam2.setWashVelocity:'>
+                    <label for="param2-4">Prawa pozycja ramia [mm]:</label>
+                    <input id="param2-4" name="param4" type="number" value=':="dbSettings".settingProgam2.setWashRightPosition:'>
+                    <label for="param2-5">Lewa pozycja ramia [mm]:</label>
+                    <input id="param2-5"  name="param5" type="number" value=':="dbSettings".settingProgam2.setWashLeftPosition:'>
+                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                </form>
+            </div>
+            <div class="settings-programs">
+                <button class="btn-popup">X</button>
+                <div class="title-popup">Zmiana parametrów programy N3</div>
+                <form id="settings-program-form3" class="settings-program">
+                    <label for="param3-1">Pozycja robota [mm]:</label>
+                    <input id="param3-1" name="param1" type="number" value=':="dbSettings".settingProgam3.setRightDistance:'>
+                    <label for="param3-2">Prędkość robota:</label>
+                    <input id="param3-2" name="param2" type="number" value=':="dbSettings".settingProgam3.setVelocity:'>
+                    <label for="param3-3">Prędkość ramia:</label>
+                    <input id="param3-3" name="param3" type="number" value=':="dbSettings".settingProgam3.setWashVelocity:'>
+                    <label for="param3-4">Prawa pozycja ramia [mm]:</label>
+                    <input id="param3-4" name="param4" type="number" value=':="dbSettings".settingProgam3.setWashRightPosition:'>
+                    <label for="param3-5">Lewa pozycja ramia [mm]:</label>
+                    <input id="param3-5"  name="param5" type="number" value=':="dbSettings".settingProgam3.setWashLeftPosition:'>
+                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                </form>
+            </div>
+            <div class="settings-programs wide-modal">
+                <button class="btn-popup">X</button>
+                <div class="title-popup">Zaawansowane parametry robota</div>
+                <form id="settings-program-form4" class="settings-program">
+                    <div class="field-pair four-cols">
+                        <div>
+                            <label for="param-robot-1">Prędkość robota w trybie ręcznym:</label>
+                            <input id="param-robot-1" name="param1" type="number" value=':="dbSettings".setManualVelocity:'>
+                        </div>
+                        <div>
+                            <label for="param-robot-2">Minimalna odleglość z przodu:</label>
+                            <input id="param-robot-2" name="param2" type="number" value=':="dbSettings".frontLimitToSetRobot:'>
+                        </div>
+                        <div>
+                            <label for="param-robot-11">Dopuszczona różnica wyrównania się:</label>
+                            <input id="param-robot-11" name="param11" type="number" value=':="dbSettings".diffDistanceToAllign:'>
+                        </div>
+                        <div>
+                            <label for="param-robot-12">Minimalny dystans do pełnego obrotu ramia:</label>
+                            <input id="param-robot-12" name="param12" type="number" value=':="dbSettings".minDistanceToFullWashAngle:'>
+                        </div>
+                    </div>
+                    <div class="field-pair">
+                        <div>
+                            <label for="param-robot-13">Dystans między prawym czujnikiem a ramiem:</label>
+                            <input id="param-robot-13" name="param13" type="number" value=':="dbSettings".distanceToResetSWLimitOfWM:'>
+                        </div>
+                        <div>
+                            <label for="param-robot-14">Korekta dystansu z przodu:</label>
+                            <input id="param-robot-14" name="param14" type="number" value=':="dbSettings".correctFrontDistance:'>
+                        </div>
+                        <div>
+                            <label for="param-robot-15">Ilość kroków:</label>
+                            <input id="param-robot-15" name="param15" type="number" value=':="dbSettings".maxRobotSteps:'>
+                        </div>
+                    </div>
+                    <div class="settings-group-row">
+                        <div class="settings-group-block">
+                            <div class="title-settings-group">Ilość mycia</div>
+                            <div class="settings-group">
+                                <div class="settings-group-item">
+                                    <label for="param-robot-3">start:</label>
+                                    <input id="param-robot-3" name="param3" type="number" value=':="dbSettings".numWashesBeforeStart:'>
+                                </div>
+                                <div class="settings-group-item">
+                                    <label for="param-robot-4">stop:</label>
+                                    <input id="param-robot-4" name="param4" type="number" value=':="dbSettings".numWashesAtTheEnd:'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-group-block">
+                            <div class="title-settings-group">Pozycja ramia podczas wykrywania objektu</div>
+                            <div class="settings-group">
+                                <div class="settings-group-item">
+                                    <label for="param-robot-5">lewa:</label>
+                                    <input id="param-robot-5" name="param5" type="number" value=':="dbSettings".leftSWLimit:'>
+                                </div>
+                                <div class="settings-group-item">
+                                    <label for="param-robot-6">prawa:</label>
+                                    <input id="param-robot-6" name="param6" type="number" value=':="dbSettings".rightSWLimit:'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-group-row two-blocks">
+                        <div class="settings-group-block">
+                            <div class="title-settings-group">Prędkość robota przy</div>
+                            <div class="settings-group">
+                                <div class="settings-group-item">
+                                    <label for="param-robot-7">pozycjonowaniu:</label>
+                                    <input id="param-robot-7" name="param7" type="number" value=':="dbSettings".setRobotVelocity:'>
+                                </div>
+                                <div class="settings-group-item">
+                                    <label for="param-robot-8">wyrównaniu:</label>
+                                    <input id="param-robot-8" name="param8" type="number" value=':="dbSettings".allignVelocity:'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-group-block">
+                            <div class="title-settings-group">Histyreza jazdy robota</div>
+                            <div class="settings-group">
+                                <div class="settings-group-item">
+                                    <label for="param-robot-9">plus:</label>
+                                    <input id="param-robot-9" name="param9" type="number" value=':="dbSettings".maxRightDistanceToCorrecRobotDriving:'>
+                                </div>
+                                <div class="settings-group-item">
+                                    <label for="param-robot-10">minus:</label>
+                                    <input id="param-robot-10" name="param10" type="number" value=':="dbSettings".minRightDistanceToCorrecRobotDriving:'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                </form>
             </div>
 
             <div class="robot-visual">
