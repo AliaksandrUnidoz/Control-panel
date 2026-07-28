@@ -22,7 +22,23 @@
         </div>
 
         <div class="language-switcher">
-            <select class="language-select" id="languageSelect">
+            <button class="language-button" id="languageButton" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="language-label-full" id="selectedLanguageLabel">Polski</span>
+                <span class="language-label-short" id="selectedLanguageShort">PL</span>
+            </button>
+
+            <ul class="language-menu" id="languageMenu" role="listbox">
+                <li><button type="button" class="language-option active" data-lang="pl" data-short="PL">Polski</button></li>
+                <li><button type="button" class="language-option" data-lang="en" data-short="EN">English</button></li>
+                <li><button type="button" class="language-option" data-lang="de" data-short="DE">Deutsch</button></li>
+                <li><button type="button" class="language-option" data-lang="fr" data-short="FR">Francais</button></li>
+                <li><button type="button" class="language-option" data-lang="es" data-short="ES">Espanol</button></li>
+                <li><button type="button" class="language-option" data-lang="ro" data-short="RO">Romana</button></li>
+                <li><button type="button" class="language-option" data-lang="bg" data-short="BG">Bulgarski</button></li>
+                <li><button type="button" class="language-option" data-lang="hu" data-short="HU">Magyar</button></li>
+            </ul>
+
+            <select class="language-select" id="languageSelect" aria-hidden="true" tabindex="-1">
                 <option value="pl">Polski</option>
                 <option value="en">English</option>
                 <option value="de">Deutsch</option>

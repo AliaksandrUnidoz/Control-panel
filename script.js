@@ -259,13 +259,75 @@ function changeLanguage(lang) {
 
 function initLanguageSwitcher() {
     const languageSelect = document.getElementById("languageSelect");
+    const languageSwitcher = document.querySelector(".language-switcher");
+    const languageButton = document.getElementById("languageButton");
+    const selectedLanguageLabel = document.getElementById("selectedLanguageLabel");
+    const selectedLanguageShort = document.getElementById("selectedLanguageShort");
+    const languageOptions = document.querySelectorAll(".language-option");
 
-    if (!languageSelect) {
+    if (!languageSelect || !languageSwitcher || !languageButton) {
         return;
     }
 
-    languageSelect.addEventListener("change", (event) => {
-        changeLanguage(event.target.value);
+    const closeMenu = () => {
+        languageSwitcher.classList.remove("is-open");
+        languageButton.setAttribute("aria-expanded", "false");
+    };
+
+    const openMenu = () => {
+        languageSwitcher.classList.add("is-open");
+        languageButton.setAttribute("aria-expanded", "true");
+    };
+
+    const toggleMenu = () => {
+        if (languageSwitcher.classList.contains("is-open")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    };
+
+    languageButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleMenu();
+    });
+
+    languageOptions.forEach((option) => {
+        option.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const lang = option.dataset.lang;
+
+            languageSelect.value = lang;
+            changeLanguage(lang);
+
+            if (selectedLanguageLabel) {
+                selectedLanguageLabel.textContent = option.textContent;
+            }
+
+            if (selectedLanguageShort) {
+                selectedLanguageShort.textContent = option.dataset.short;
+            }
+
+            languageOptions.forEach((languageOption) => {
+                languageOption.classList.remove("active");
+            });
+
+            option.classList.add("active");
+            closeMenu();
+        });
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!languageSwitcher.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
     });
 }
 
