@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniDoz | Panel sterowania robota</title>
+    <link rel="icon" type="image/png" href="./img/drop.png">
+    <title>Unidoz</title>
+    <script src="jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -164,114 +166,120 @@
             <!-- Settings for programs -->
             <div class="settings-programs">
                 <button class="btn-popup">X</button>
-                <div class="title-popup" id="title-1">Zmiana parametrów programy N1</div>
+                <div class="title-popup" id="title-1" data-translate-key="program1Title">Zmiana parametrów programy N1</div>
                 <form id="settings-program-form1" class="settings-program">
-                    <label for="param1-1">Pozycja robota [mm]:</label>
+                    <label for="param1-1" data-translate-key="programFieldRobotPosition">Pozycja robota [mm]:</label>
                     <input id="param1-1" name="param1" type="number" value=':="dbSettings".settingProgam1.setRightDistance:'>
-                    <label for="param1-2">Prędkość robota:</label>
+                    <label for="param1-2" data-translate-key="programFieldRobotVelocity">Prędkość robota:</label>
                     <input id="param1-2" name="param2" type="number" value=':="dbSettings".settingProgam1.setVelocity:'>
-                    <label for="param1-3">Prędkość ramia:</label>
+                    <label for="param1-3" data-translate-key="programFieldArmVelocity">Prędkość ramia:</label>
                     <input id="param1-3" name="param3" type="number" value=':="dbSettings".settingProgam1.setWashVelocity:'>
-                    <label for="param1-4">Prawa pozycja ramia [mm]:</label>
+                    <label for="param1-4" data-translate-key="programFieldArmRightPosition">Prawa pozycja ramia [mm]:</label>
                     <input id="param1-4" name="param4" type="number" value=':="dbSettings".settingProgam1.setWashRightPosition:'>
-                    <label for="param1-5">Lewa pozycja ramia [mm]:</label>
+                    <label for="param1-5" data-translate-key="programFieldArmLeftPosition">Lewa pozycja ramia [mm]:</label>
                     <input id="param1-5"  name="param5" type="number" value=':="dbSettings".settingProgam1.setWashLeftPosition:'>
-                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                    <div class="form-actions">
+                        <button type="submit" class="settings-btn" data-translate-key="saveSettings">Zapisz ustawienia</button>
+                    </div>
                 </form>
             </div>
             <div class="settings-programs">
                 <button class="btn-popup">X</button>
-                <div class="title-popup">Zmiana parametrów programy N2</div>
+                <div class="title-popup" data-translate-key="program2Title">Zmiana parametrów programy N2</div>
                 <form id="settings-program-form2" class="settings-program">
-                    <label for="param2-1">Pozycja robota [mm]:</label>
+                    <label for="param2-1" data-translate-key="programFieldRobotPosition">Pozycja robota [mm]:</label>
                     <input id="param2-1" name="param1" type="number" value=':="dbSettings".settingProgam2.setRightDistance:'>
-                    <label for="param2-2">Prędkość robota:</label>
+                    <label for="param2-2" data-translate-key="programFieldRobotVelocity">Prędkość robota:</label>
                     <input id="param2-2" name="param2" type="number" value=':="dbSettings".settingProgam2.setVelocity:'>
-                    <label for="param2-3">Prędkość ramia:</label>
+                    <label for="param2-3" data-translate-key="programFieldArmVelocity">Prędkość ramia:</label>
                     <input id="param2-3" name="param3" type="number" value=':="dbSettings".settingProgam2.setWashVelocity:'>
-                    <label for="param2-4">Prawa pozycja ramia [mm]:</label>
+                    <label for="param2-4" data-translate-key="programFieldArmRightPosition">Prawa pozycja ramia [mm]:</label>
                     <input id="param2-4" name="param4" type="number" value=':="dbSettings".settingProgam2.setWashRightPosition:'>
-                    <label for="param2-5">Lewa pozycja ramia [mm]:</label>
+                    <label for="param2-5" data-translate-key="programFieldArmLeftPosition">Lewa pozycja ramia [mm]:</label>
                     <input id="param2-5"  name="param5" type="number" value=':="dbSettings".settingProgam2.setWashLeftPosition:'>
-                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                    <div class="form-actions">
+                        <button type="submit" class="settings-btn" data-translate-key="saveSettings">Zapisz ustawienia</button>
+                    </div>
                 </form>
             </div>
             <div class="settings-programs">
                 <button class="btn-popup">X</button>
-                <div class="title-popup">Zmiana parametrów programy N3</div>
+                <div class="title-popup" data-translate-key="program3Title">Zmiana parametrów programy N3</div>
                 <form id="settings-program-form3" class="settings-program">
-                    <label for="param3-1">Pozycja robota [mm]:</label>
+                    <label for="param3-1" data-translate-key="programFieldRobotPosition">Pozycja robota [mm]:</label>
                     <input id="param3-1" name="param1" type="number" value=':="dbSettings".settingProgam3.setRightDistance:'>
-                    <label for="param3-2">Prędkość robota:</label>
+                    <label for="param3-2" data-translate-key="programFieldRobotVelocity">Prędkość robota:</label>
                     <input id="param3-2" name="param2" type="number" value=':="dbSettings".settingProgam3.setVelocity:'>
-                    <label for="param3-3">Prędkość ramia:</label>
+                    <label for="param3-3" data-translate-key="programFieldArmVelocity">Prędkość ramia:</label>
                     <input id="param3-3" name="param3" type="number" value=':="dbSettings".settingProgam3.setWashVelocity:'>
-                    <label for="param3-4">Prawa pozycja ramia [mm]:</label>
+                    <label for="param3-4" data-translate-key="programFieldArmRightPosition">Prawa pozycja ramia [mm]:</label>
                     <input id="param3-4" name="param4" type="number" value=':="dbSettings".settingProgam3.setWashRightPosition:'>
-                    <label for="param3-5">Lewa pozycja ramia [mm]:</label>
+                    <label for="param3-5" data-translate-key="programFieldArmLeftPosition">Lewa pozycja ramia [mm]:</label>
                     <input id="param3-5"  name="param5" type="number" value=':="dbSettings".settingProgam3.setWashLeftPosition:'>
-                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                    <div class="form-actions">
+                        <button type="submit" class="settings-btn" data-translate-key="saveSettings">Zapisz ustawienia</button>
+                    </div>
                 </form>
             </div>
             <div class="settings-programs wide-modal">
                 <button class="btn-popup">X</button>
-                <div class="title-popup">Zaawansowane parametry robota</div>
+                <div class="title-popup" data-translate-key="advancedTitle">Zaawansowane parametry robota</div>
                 <form id="settings-program-form4" class="settings-program">
                     <div class="field-pair four-cols">
                         <div>
-                            <label for="param-robot-1">Prędkość robota w trybie ręcznym:</label>
+                            <label for="param-robot-1" data-translate-key="advancedManualVelocityLabel">Prędkość robota w trybie ręcznym:</label>
                             <input id="param-robot-1" name="param1" type="number" value=':="dbSettings".setManualVelocity:'>
                         </div>
                         <div>
-                            <label for="param-robot-2">Minimalna odleglość z przodu:</label>
+                            <label for="param-robot-2" data-translate-key="advancedFrontLimitLabel">Minimalna odleglość z przodu:</label>
                             <input id="param-robot-2" name="param2" type="number" value=':="dbSettings".frontLimitToSetRobot:'>
                         </div>
                         <div>
-                            <label for="param-robot-11">Dopuszczona różnica wyrównania się:</label>
+                            <label for="param-robot-11" data-translate-key="advancedAlignmentDifferenceLabel">Dopuszczona różnica wyrównania się:</label>
                             <input id="param-robot-11" name="param11" type="number" value=':="dbSettings".diffDistanceToAllign:'>
                         </div>
                         <div>
-                            <label for="param-robot-12">Minimalny dystans do pełnego obrotu ramia:</label>
+                            <label for="param-robot-12" data-translate-key="advancedMinFullWashAngleLabel">Minimalny dystans do pełnego obrotu ramia:</label>
                             <input id="param-robot-12" name="param12" type="number" value=':="dbSettings".minDistanceToFullWashAngle:'>
                         </div>
                     </div>
                     <div class="field-pair">
                         <div>
-                            <label for="param-robot-13">Dystans między prawym czujnikiem a ramiem:</label>
+                            <label for="param-robot-13" data-translate-key="advancedSensorArmDistanceLabel">Dystans między prawym czujnikiem a ramiem:</label>
                             <input id="param-robot-13" name="param13" type="number" value=':="dbSettings".distanceToResetSWLimitOfWM:'>
                         </div>
                         <div>
-                            <label for="param-robot-14">Korekta dystansu z przodu:</label>
+                            <label for="param-robot-14" data-translate-key="advancedFrontCorrectionLabel">Korekta dystansu z przodu:</label>
                             <input id="param-robot-14" name="param14" type="number" value=':="dbSettings".correctFrontDistance:'>
                         </div>
                         <div>
-                            <label for="param-robot-15">Ilość kroków:</label>
+                            <label for="param-robot-15" data-translate-key="advancedStepsLabel">Ilość kroków:</label>
                             <input id="param-robot-15" name="param15" type="number" value=':="dbSettings".maxRobotSteps:'>
                         </div>
                     </div>
                     <div class="settings-group-row">
                         <div class="settings-group-block">
-                            <div class="title-settings-group">Ilość mycia</div>
+                            <div class="title-settings-group" data-translate-key="advancedWashCountTitle">Ilość mycia</div>
                             <div class="settings-group">
                                 <div class="settings-group-item">
-                                    <label for="param-robot-3">start:</label>
+                                    <label for="param-robot-3" data-translate-key="advancedWashStartLabel">start:</label>
                                     <input id="param-robot-3" name="param3" type="number" value=':="dbSettings".numWashesBeforeStart:'>
                                 </div>
                                 <div class="settings-group-item">
-                                    <label for="param-robot-4">stop:</label>
+                                    <label for="param-robot-4" data-translate-key="advancedWashStopLabel">stop:</label>
                                     <input id="param-robot-4" name="param4" type="number" value=':="dbSettings".numWashesAtTheEnd:'>
                                 </div>
                             </div>
                         </div>
                         <div class="settings-group-block">
-                            <div class="title-settings-group">Pozycja ramia podczas wykrywania objektu</div>
+                            <div class="title-settings-group" data-translate-key="advancedArmDetectionTitle">Pozycja ramia podczas wykrywania objektu</div>
                             <div class="settings-group">
                                 <div class="settings-group-item">
-                                    <label for="param-robot-5">lewa:</label>
+                                    <label for="param-robot-5" data-translate-key="advancedArmLeftLabel">lewa:</label>
                                     <input id="param-robot-5" name="param5" type="number" value=':="dbSettings".leftSWLimit:'>
                                 </div>
                                 <div class="settings-group-item">
-                                    <label for="param-robot-6">prawa:</label>
+                                    <label for="param-robot-6" data-translate-key="advancedArmRightLabel">prawa:</label>
                                     <input id="param-robot-6" name="param6" type="number" value=':="dbSettings".rightSWLimit:'>
                                 </div>
                             </div>
@@ -279,43 +287,46 @@
                     </div>
                     <div class="settings-group-row two-blocks">
                         <div class="settings-group-block">
-                            <div class="title-settings-group">Prędkość robota przy</div>
+                            <div class="title-settings-group" data-translate-key="advancedRobotSpeedTitle">Prędkość robota przy</div>
                             <div class="settings-group">
                                 <div class="settings-group-item">
-                                    <label for="param-robot-7">pozycjonowaniu:</label>
+                                    <label for="param-robot-7" data-translate-key="advancedPositioningLabel">pozycjonowaniu:</label>
                                     <input id="param-robot-7" name="param7" type="number" value=':="dbSettings".setRobotVelocity:'>
                                 </div>
                                 <div class="settings-group-item">
-                                    <label for="param-robot-8">wyrównaniu:</label>
+                                    <label for="param-robot-8" data-translate-key="advancedAlignmentLabel">wyrównaniu:</label>
                                     <input id="param-robot-8" name="param8" type="number" value=':="dbSettings".allignVelocity:'>
                                 </div>
                             </div>
                         </div>
                         <div class="settings-group-block">
-                            <div class="title-settings-group">Histyreza jazdy robota</div>
+                            <div class="title-settings-group" data-translate-key="advancedDriveHysteresisTitle">Histyreza jazdy robota</div>
                             <div class="settings-group">
                                 <div class="settings-group-item">
-                                    <label for="param-robot-9">plus:</label>
+                                    <label for="param-robot-9" data-translate-key="advancedPlusLabel">plus:</label>
                                     <input id="param-robot-9" name="param9" type="number" value=':="dbSettings".maxRightDistanceToCorrecRobotDriving:'>
                                 </div>
                                 <div class="settings-group-item">
-                                    <label for="param-robot-10">minus:</label>
+                                    <label for="param-robot-10" data-translate-key="advancedMinusLabel">minus:</label>
                                     <input id="param-robot-10" name="param10" type="number" value=':="dbSettings".minRightDistanceToCorrecRobotDriving:'>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
 
-                    <button type="submit" class="settings-btn">Zapisz ustawienia</button>
+                    <div class="form-actions">
+                        <button type="submit" class="settings-btn" data-translate-key="saveSettings">Zapisz ustawienia</button>
+                    </div>
                 </form>
             </div>
 
+            <div class="settings-overlay" aria-hidden="true"></div>
+
             <div class="robot-visual">
-                <div class="dim left-top">1200 <span class="unitMm">mm</span></div>
-                <div class="dim left-bottom">1200 <span class="unitMm">mm</span></div>
-                <div class="dim right">1200 <span class="unitMm">mm</span></div>
-                <div class="dim bottom">1200 <span class="unitMm">mm</span></div>
+                <div id="right-top-distance" class="dim left-top"> <span class="unitMm">mm</span></div>
+                <div id="right-bottom-distance" class="dim left-bottom"> <span class="unitMm">mm</span></div>
+                <div id="left-distance" class="dim right"> <span class="unitMm">mm</span></div>
+                <div id="front-distance" class="dim bottom"> <span class="unitMm">mm</span></div>
 
                 <div class="blueprint-box">
                     <img id="robotImage"

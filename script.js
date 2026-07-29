@@ -26,7 +26,36 @@ const translations = {
         advancedBtn: "Zaawansowane",
         workTime: "Czas pracy robota: 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Robot przemysłowy"
+        robotAlt: "Robot przemysłowy",
+        program1Title: "Zmiana parametrów programu N1",
+        program2Title: "Zmiana parametrów programu N2",
+        program3Title: "Zmiana parametrów programu N3",
+        advancedTitle: "Zaawansowane parametry robota",
+        programFieldRobotPosition: "Pozycja robota [mm]:",
+        programFieldRobotVelocity: "Prędkość robota:",
+        programFieldArmVelocity: "Prędkość ramienia:",
+        programFieldArmRightPosition: "Prawa pozycja ramienia [mm]:",
+        programFieldArmLeftPosition: "Lewa pozycja ramienia [mm]:",
+        saveSettings: "Zapisz ustawienia",
+        advancedManualVelocityLabel: "Prędkość robota w trybie ręcznym:",
+        advancedFrontLimitLabel: "Minimalna odległość z przodu:",
+        advancedAlignmentDifferenceLabel: "Dopuszczalna różnica wyrównania się:",
+        advancedMinFullWashAngleLabel: "Minimalny dystans do pełnego obrotu ramienia:",
+        advancedSensorArmDistanceLabel: "Dystans między prawym czujnikiem a ramieniem:",
+        advancedFrontCorrectionLabel: "Korekta dystansu z przodu:",
+        advancedStepsLabel: "Ilość kroków:",
+        advancedWashCountTitle: "Ilość mycia",
+        advancedWashStartLabel: "start:",
+        advancedWashStopLabel: "stop:",
+        advancedArmDetectionTitle: "Pozycja ramienia podczas wykrywania obiektu",
+        advancedArmLeftLabel: "lewa:",
+        advancedArmRightLabel: "prawa:",
+        advancedRobotSpeedTitle: "Prędkość robota przy",
+        advancedPositioningLabel: "pozycjonowaniu:",
+        advancedAlignmentLabel: "wyrównaniu:",
+        advancedDriveHysteresisTitle: "Histereza jazdy robota",
+        advancedPlusLabel: "plus:",
+        advancedMinusLabel: "minus:"
     },
     en: {
         panelTitle: "Control Panel",
@@ -54,7 +83,36 @@ const translations = {
         advancedBtn: "Advanced",
         workTime: "Robot work time: 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Industrial robot"
+        robotAlt: "Industrial robot",
+        program1Title: "Program 1 parameter change",
+        program2Title: "Program 2 parameter change",
+        program3Title: "Program 3 parameter change",
+        advancedTitle: "Advanced robot parameters",
+        programFieldRobotPosition: "Robot position [mm]:",
+        programFieldRobotVelocity: "Robot speed:",
+        programFieldArmVelocity: "Arm speed:",
+        programFieldArmRightPosition: "Right arm position [mm]:",
+        programFieldArmLeftPosition: "Left arm position [mm]:",
+        saveSettings: "Save settings",
+        advancedManualVelocityLabel: "Robot speed in manual mode:",
+        advancedFrontLimitLabel: "Minimum distance from the front:",
+        advancedAlignmentDifferenceLabel: "Allowed alignment difference:",
+        advancedMinFullWashAngleLabel: "Minimum distance to full arm rotation:",
+        advancedSensorArmDistanceLabel: "Distance between the right sensor and the arm:",
+        advancedFrontCorrectionLabel: "Front distance correction:",
+        advancedStepsLabel: "Number of steps:",
+        advancedWashCountTitle: "Washing count",
+        advancedWashStartLabel: "start:",
+        advancedWashStopLabel: "stop:",
+        advancedArmDetectionTitle: "Arm position during object detection",
+        advancedArmLeftLabel: "left:",
+        advancedArmRightLabel: "right:",
+        advancedRobotSpeedTitle: "Robot speed when",
+        advancedPositioningLabel: "positioning:",
+        advancedAlignmentLabel: "aligning:",
+        advancedDriveHysteresisTitle: "Robot drive hysteresis",
+        advancedPlusLabel: "plus:",
+        advancedMinusLabel: "minus:"
     },
     de: {
         panelTitle: "Steuerpanel",
@@ -82,7 +140,36 @@ const translations = {
         advancedBtn: "Erweitert",
         workTime: "Roboterlaufzeit: 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Industrieroboter"
+        robotAlt: "Industrieroboter",
+        program1Title: "Parameteränderung von Programm 1",
+        program2Title: "Parameteränderung von Programm 2",
+        program3Title: "Parameteränderung von Programm 3",
+        advancedTitle: "Erweiterte Roboterparameter",
+        programFieldRobotPosition: "Roboterposition [mm]:",
+        programFieldRobotVelocity: "Robotergeschwindigkeit:",
+        programFieldArmVelocity: "Armgeschwindigkeit:",
+        programFieldArmRightPosition: "Rechte Armposition [mm]:",
+        programFieldArmLeftPosition: "Linke Armposition [mm]:",
+        saveSettings: "Einstellungen speichern",
+        advancedManualVelocityLabel: "Robotergeschwindigkeit im Handmodus:",
+        advancedFrontLimitLabel: "Minimaler Abstand von vorne:",
+        advancedAlignmentDifferenceLabel: "Zulässige Ausrichtungsdifferenz:",
+        advancedMinFullWashAngleLabel: "Minimaler Abstand zur vollständigen Armrotation:",
+        advancedSensorArmDistanceLabel: "Abstand zwischen dem rechten Sensor und dem Arm:",
+        advancedFrontCorrectionLabel: "Korrektur des Abstands von vorne:",
+        advancedStepsLabel: "Schrittanzahl:",
+        advancedWashCountTitle: "Waschanzahl",
+        advancedWashStartLabel: "start:",
+        advancedWashStopLabel: "stopp:",
+        advancedArmDetectionTitle: "Armposition bei Objekterkennung",
+        advancedArmLeftLabel: "links:",
+        advancedArmRightLabel: "rechts:",
+        advancedRobotSpeedTitle: "Robotergeschwindigkeit bei",
+        advancedPositioningLabel: "Positionierung:",
+        advancedAlignmentLabel: "Ausrichtung:",
+        advancedDriveHysteresisTitle: "Roboterfahr-Hysterese",
+        advancedPlusLabel: "plus:",
+        advancedMinusLabel: "minus:"
     },
     fr: {
         panelTitle: "Panneau de contrôle",
@@ -110,7 +197,36 @@ const translations = {
         advancedBtn: "Avancé",
         workTime: "Temps de travail du robot : 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Robot industriel"
+        robotAlt: "Robot industriel",
+        program1Title: "Modification des paramètres du programme 1",
+        program2Title: "Modification des paramètres du programme 2",
+        program3Title: "Modification des paramètres du programme 3",
+        advancedTitle: "Paramètres avancés du robot",
+        programFieldRobotPosition: "Position du robot [mm] :",
+        programFieldRobotVelocity: "Vitesse du robot :",
+        programFieldArmVelocity: "Vitesse du bras :",
+        programFieldArmRightPosition: "Position droite du bras [mm] :",
+        programFieldArmLeftPosition: "Position gauche du bras [mm] :",
+        saveSettings: "Enregistrer les réglages",
+        advancedManualVelocityLabel: "Vitesse du robot en mode manuel :",
+        advancedFrontLimitLabel: "Distance minimale depuis l'avant :",
+        advancedAlignmentDifferenceLabel: "Différence d'alignement autorisée :",
+        advancedMinFullWashAngleLabel: "Distance minimale jusqu'à la rotation complète du bras :",
+        advancedSensorArmDistanceLabel: "Distance entre le capteur droit et le bras :",
+        advancedFrontCorrectionLabel: "Correction de la distance depuis l'avant :",
+        advancedStepsLabel: "Nombre de pas :",
+        advancedWashCountTitle: "Nombre de lavages",
+        advancedWashStartLabel: "début :",
+        advancedWashStopLabel: "fin :",
+        advancedArmDetectionTitle: "Position du bras lors de la détection d'objet",
+        advancedArmLeftLabel: "gauche :",
+        advancedArmRightLabel: "droite :",
+        advancedRobotSpeedTitle: "Vitesse du robot lors de",
+        advancedPositioningLabel: "positionnement :",
+        advancedAlignmentLabel: "alignement :",
+        advancedDriveHysteresisTitle: "Hystérésis de conduite du robot",
+        advancedPlusLabel: "plus :",
+        advancedMinusLabel: "moins :"
     },
     es: {
         panelTitle: "Panel de control",
@@ -138,7 +254,36 @@ const translations = {
         advancedBtn: "Avanzado",
         workTime: "Tiempo de trabajo del robot: 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Robot industrial"
+        robotAlt: "Robot industrial",
+        program1Title: "Cambio de parámetros del programa 1",
+        program2Title: "Cambio de parámetros del programa 2",
+        program3Title: "Cambio de parámetros del programa 3",
+        advancedTitle: "Parámetros avanzados del robot",
+        programFieldRobotPosition: "Posición del robot [mm]:",
+        programFieldRobotVelocity: "Velocidad del robot:",
+        programFieldArmVelocity: "Velocidad del brazo:",
+        programFieldArmRightPosition: "Posición derecha del brazo [mm]:",
+        programFieldArmLeftPosition: "Posición izquierda del brazo [mm]:",
+        saveSettings: "Guardar configuración",
+        advancedManualVelocityLabel: "Velocidad del robot en modo manual:",
+        advancedFrontLimitLabel: "Distancia mínima desde el frente:",
+        advancedAlignmentDifferenceLabel: "Diferencia de alineación permitida:",
+        advancedMinFullWashAngleLabel: "Distancia mínima hasta la rotación completa del brazo:",
+        advancedSensorArmDistanceLabel: "Distancia entre el sensor derecho y el brazo:",
+        advancedFrontCorrectionLabel: "Corrección de distancia desde el frente:",
+        advancedStepsLabel: "Número de pasos:",
+        advancedWashCountTitle: "Cantidad de lavado",
+        advancedWashStartLabel: "inicio:",
+        advancedWashStopLabel: "fin:",
+        advancedArmDetectionTitle: "Posición del brazo durante la detección de objetos",
+        advancedArmLeftLabel: "izquierda:",
+        advancedArmRightLabel: "derecha:",
+        advancedRobotSpeedTitle: "Velocidad del robot al",
+        advancedPositioningLabel: "posicionamiento:",
+        advancedAlignmentLabel: "alineación:",
+        advancedDriveHysteresisTitle: "Histéresis de conducción del robot",
+        advancedPlusLabel: "más:",
+        advancedMinusLabel: "menos:"
     },
     ro: {
         panelTitle: "Panou de control",
@@ -166,7 +311,36 @@ const translations = {
         advancedBtn: "Avansat",
         workTime: "Timp de lucru robot: 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Robot industrial"
+        robotAlt: "Robot industrial",
+        program1Title: "Schimbarea parametrilor programului 1",
+        program2Title: "Schimbarea parametrilor programului 2",
+        program3Title: "Schimbarea parametrilor programului 3",
+        advancedTitle: "Parametri avansați ai robotului",
+        programFieldRobotPosition: "Poziția robotului [mm]:",
+        programFieldRobotVelocity: "Viteza robotului:",
+        programFieldArmVelocity: "Viteza brațului:",
+        programFieldArmRightPosition: "Poziția dreaptă a brațului [mm]:",
+        programFieldArmLeftPosition: "Poziția stângă a brațului [mm]:",
+        saveSettings: "Salvează setările",
+        advancedManualVelocityLabel: "Viteza robotului în modul manual:",
+        advancedFrontLimitLabel: "Distanța minimă din față:",
+        advancedAlignmentDifferenceLabel: "Diferența permisă de aliniere:",
+        advancedMinFullWashAngleLabel: "Distanța minimă până la rotația completă a brațului:",
+        advancedSensorArmDistanceLabel: "Distanța dintre senzorul drept și braț:",
+        advancedFrontCorrectionLabel: "Corecția distanței din față:",
+        advancedStepsLabel: "Număr de pași:",
+        advancedWashCountTitle: "Număr de spălări",
+        advancedWashStartLabel: "start:",
+        advancedWashStopLabel: "stop:",
+        advancedArmDetectionTitle: "Poziția brațului în timpul detectării obiectelor",
+        advancedArmLeftLabel: "stânga:",
+        advancedArmRightLabel: "dreapta:",
+        advancedRobotSpeedTitle: "Viteza robotului la",
+        advancedPositioningLabel: "poziționare:",
+        advancedAlignmentLabel: "aliniere:",
+        advancedDriveHysteresisTitle: "Histereză de conducere a robotului",
+        advancedPlusLabel: "plus:",
+        advancedMinusLabel: "minus:"
     },
     bg: {
         panelTitle: "Контролен панел",
@@ -194,7 +368,36 @@ const translations = {
         advancedBtn: "Разширени",
         workTime: "Работно време на робота: 2H : 1M",
         unitMm: "мм",
-        robotAlt: "Индустриален робот"
+        robotAlt: "Индустриален робот",
+        program1Title: "Промяна на параметрите на програма 1",
+        program2Title: "Промяна на параметрите на програма 2",
+        program3Title: "Промяна на параметрите на програма 3",
+        advancedTitle: "Разширени параметри на робота",
+        programFieldRobotPosition: "Позиция на робота [mm]:",
+        programFieldRobotVelocity: "Скорост на робота:",
+        programFieldArmVelocity: "Скорост на ръката:",
+        programFieldArmRightPosition: "Дясна позиция на ръката [mm]:",
+        programFieldArmLeftPosition: "Лява позиция на ръката [mm]:",
+        saveSettings: "Запазване на настройките",
+        advancedManualVelocityLabel: "Скорост на робота в ръчен режим:",
+        advancedFrontLimitLabel: "Минимално разстояние отпред:",
+        advancedAlignmentDifferenceLabel: "Допустима разлика при подравняване:",
+        advancedMinFullWashAngleLabel: "Минимално разстояние до пълния завой на ръката:",
+        advancedSensorArmDistanceLabel: "Разстояние между десния сензор и ръката:",
+        advancedFrontCorrectionLabel: "Корекция на разстоянието отпред:",
+        advancedStepsLabel: "Брой стъпки:",
+        advancedWashCountTitle: "Брой измивания",
+        advancedWashStartLabel: "начало:",
+        advancedWashStopLabel: "край:",
+        advancedArmDetectionTitle: "Позиция на ръката при откриване на обект",
+        advancedArmLeftLabel: "ляво:",
+        advancedArmRightLabel: "дясно:",
+        advancedRobotSpeedTitle: "Скорост на робота при",
+        advancedPositioningLabel: "позициониране:",
+        advancedAlignmentLabel: "подравняване:",
+        advancedDriveHysteresisTitle: "Хистерезис на движение на робота",
+        advancedPlusLabel: "плюс:",
+        advancedMinusLabel: "минус:"
     },
     hu: {
         panelTitle: "Vezérlőpult",
@@ -222,7 +425,36 @@ const translations = {
         advancedBtn: "Haladó",
         workTime: "Robot munkaidő: 2H : 1M",
         unitMm: "mm",
-        robotAlt: "Ipari robot"
+        robotAlt: "Ipari robot",
+        program1Title: "Program 1 paraméterváltoztatása",
+        program2Title: "Program 2 paraméterváltoztatása",
+        program3Title: "Program 3 paraméterváltoztatása",
+        advancedTitle: "Robot speciális paraméterei",
+        programFieldRobotPosition: "Robot helyzete [mm]:",
+        programFieldRobotVelocity: "Robot sebessége:",
+        programFieldArmVelocity: "Kar sebessége:",
+        programFieldArmRightPosition: "Jobb kar pozíciója [mm]:",
+        programFieldArmLeftPosition: "Bal kar pozíciója [mm]:",
+        saveSettings: "Beállítások mentése",
+        advancedManualVelocityLabel: "Robot sebessége kézi üzemmódban:",
+        advancedFrontLimitLabel: "Minimális távolság elöl:",
+        advancedAlignmentDifferenceLabel: "Engedélyezett igazítási eltérés:",
+        advancedMinFullWashAngleLabel: "Minimális távolság a kar teljes forgatásáig:",
+        advancedSensorArmDistanceLabel: "Távolság a jobb érzékelő és a kar között:",
+        advancedFrontCorrectionLabel: "Elülső távolság korrekciója:",
+        advancedStepsLabel: "Lépések száma:",
+        advancedWashCountTitle: "Mosások száma",
+        advancedWashStartLabel: "start:",
+        advancedWashStopLabel: "stop:",
+        advancedArmDetectionTitle: "A kar pozíciója tárgyfelismerés közben",
+        advancedArmLeftLabel: "bal:",
+        advancedArmRightLabel: "jobb:",
+        advancedRobotSpeedTitle: "Robot sebessége",
+        advancedPositioningLabel: "pozicionálás:",
+        advancedAlignmentLabel: "igazítás:",
+        advancedDriveHysteresisTitle: "Robot meghajtás hiszterézis",
+        advancedPlusLabel: "plusz:",
+        advancedMinusLabel: "mínusz:"
     }
 };
 const redDot = document.querySelector('#redDot')
@@ -237,56 +469,60 @@ const autoBtn3 = document.querySelector('#auto-btn-3')
 const configButtons = document.querySelectorAll(".config-btn");
 const settingsPrograms = document.querySelectorAll(".settings-programs");
 const closeButtons = document.querySelectorAll(".btn-popup");
+const leftDistance = document.querySelector('#left-distance')
+const frontDistance = document.querySelector('#front-distance')
+const rightTopDistance = document.querySelector('#right-top-distance')
+const rightBottomDistance = document.querySelector('#right-bottom-distance')
 
-// connection with PLC //
-// $(document).ready(function(){
-//     $.ajaxSetup({ cache: false });
+//connection with PLC //
+$(document).ready(function(){
+    $.ajaxSetup({ cache: false });
 
-//     setInterval(updateData, 500)
+    setInterval(updateData, 500)
 
-//     $('#stopBtn').click(function() {
-//         stopRobot()
-//     })
-//     $('#pauseBtn').click(function() {
-//         updateData().then(vars=> {
-//             pauseRobot(vars)
-//         })
-//     })
-//     $('#resetBtn').click(function() {
-//         resetRobot()
-//     })
-//     $('#drainBtn').on('mousedown', function() {
-//         drainWater();
-//     });
-//     $('#drainBtn').on('touchstart', function() {
-//         drainWater();
-//     });
-//     $('#drainBtn').on('mouseup', function() {
-//         stopDrainWater();
-//     });
-//     $('#drainBtn').on('touchend', function() {
-//         stopDrainWater();
-//     });
-//     $('#auto-btns').click(function(e) {
-//         autoPrograms(e)
-//     })
-//     $("#settings-program-form1").submit(function(event) {
-//         event.preventDefault()
-//         submitForm(1)
-//     });
-//     $("#settings-program-form2").submit(function(event) {
-//         event.preventDefault()
-//         submitForm(2)
-//     });
-//     $("#settings-program-form3").submit(function(event) {
-//         event.preventDefault()
-//         submitForm(3)
-//     });
-//     $("#settings-robot-form").submit(function(event) {
-//         event.preventDefault()
-//         submitRobotForm()
-//     });
-// })
+    $('#stopBtn').click(function() {
+        stopRobot()
+    })
+    $('#pauseBtn').click(function() {
+        updateData().then(vars=> {
+            pauseRobot(vars)
+        })
+    })
+    $('#resetBtn').click(function() {
+        resetRobot()
+    })
+    $('#drainBtn').on('mousedown', function() {
+        drainWater();
+    });
+    $('#drainBtn').on('touchstart', function() {
+        drainWater();
+    });
+    $('#drainBtn').on('mouseup', function() {
+        stopDrainWater();
+    });
+    $('#drainBtn').on('touchend', function() {
+        stopDrainWater();
+    });
+    $('#auto-btns').click(function(e) {
+        autoPrograms(e)
+    })
+    $("#settings-program-form1").submit(function(event) {
+        event.preventDefault()
+        submitForm(1)
+    });
+    $("#settings-program-form2").submit(function(event) {
+        event.preventDefault()
+        submitForm(2)
+    });
+    $("#settings-program-form3").submit(function(event) {
+        event.preventDefault()
+        submitForm(3)
+    });
+    $("#settings-program-form4").submit(function(event) {
+        event.preventDefault()
+        submitRobotForm()
+    });
+})
 
 function updateData() {
     return $.get("IOVariablesUpdate.htm").then(result => {
@@ -298,6 +534,10 @@ function updateData() {
         return variables;
     })
 }
+function parsePLCVariables(result) {
+    return result.split('\n').filter(line => line.trim() !== '')
+}
+
 // function for change lights on the panel based on PLC variables
 function lights(variables) {    
     if(variables[0] == 1) {
@@ -342,6 +582,14 @@ function changeLanguage(lang) {
         }
         setText(key, value);
     });
+
+    document.querySelectorAll("[data-translate-key]").forEach((element) => {
+        const key = element.dataset.translateKey;
+        if (dictionary[key]) {
+            element.textContent = dictionary[key];
+        }
+    });
+
     document.documentElement.lang = lang;
 }
 
@@ -636,6 +884,12 @@ function closeAllWindows() {
     });
 }
 
+function centerWindow(windowBox) {
+    windowBox.style.left = "50%";
+    windowBox.style.top = "50%";
+    windowBox.style.transform = "translate(-50%, -50%) scale(1)";
+}
+
 configButtons.forEach((button,index)=>{
     button.addEventListener("click",()=>{
         const popup = settingsPrograms[index];
@@ -645,6 +899,7 @@ configButtons.forEach((button,index)=>{
             closeAllWindows();
             popup.classList.add("active-program");
             button.classList.add("active");
+            centerWindow(popup);
         }
     });
 });
@@ -654,30 +909,128 @@ closeButtons.forEach(button=>{
         closeAllWindows();
     });
 });
+
 settingsPrograms.forEach(windowBox=>{
     const header = windowBox.querySelector(".title-popup");
     let isDragging = false;
-    let startX = 0;
-    let startY = 0;
-    let left = 0;
-    let top = 0;
+    let offsetX = 0;
+    let offsetY = 0;
+
     header.style.cursor = "grab";
+
     header.addEventListener("mousedown",(e)=>{
+        e.preventDefault();
+        const rect = windowBox.getBoundingClientRect();
+        const currentLeft = rect.left;
+        const currentTop = rect.top;
+
+        windowBox.style.left = `${currentLeft}px`;
+        windowBox.style.top = `${currentTop}px`;
+        windowBox.style.transform = "none";
+
+        offsetX = e.clientX - currentLeft;
+        offsetY = e.clientY - currentTop;
         isDragging = true;
         header.style.cursor = "grabbing";
-        left = windowBox.offsetLeft;
-        top = windowBox.offsetTop;
-        startX = e.clientX;
-        startY = e.clientY;
+        windowBox.style.transition = "none";
     });
+
     document.addEventListener("mouseup",()=>{
         isDragging = false;
         header.style.cursor = "grab";
+        windowBox.style.transition = "opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease";
     });
+
     document.addEventListener("mousemove",(e)=>{
         if(!isDragging) return;
         e.preventDefault();
-        windowBox.style.left = left + (e.clientX-startX) + "px";
-        windowBox.style.top = top + (e.clientY-startY) + "px";
+
+        const nextLeft = e.clientX - offsetX;
+        const nextTop = e.clientY - offsetY;
+        const maxLeft = window.innerWidth - windowBox.offsetWidth - 12;
+        const maxTop = window.innerHeight - windowBox.offsetHeight - 12;
+
+        windowBox.style.left = `${Math.max(12, Math.min(maxLeft, nextLeft))}px`;
+        windowBox.style.top = `${Math.max(12, Math.min(maxTop, nextTop))}px`;
     });
 });
+
+window.addEventListener("resize", () => {
+    settingsPrograms.forEach(windowBox => {
+        if (windowBox.classList.contains("active-program")) {
+            centerWindow(windowBox);
+        }
+    });
+});
+
+// functions for send PLC variables based on settings form submit
+function submitForm(numOfProgram) {
+    let paramString = '#param' + numOfProgram
+    const param1Val = $(paramString +'-1').val();
+    const param2Val = $(paramString +'-2').val();
+    const param3Val = $(paramString +'-3').val();
+    const param4Val = $(paramString +'-4').val();
+    const param5Val = $(paramString +'-5').val();
+
+    let postData = [];
+    let settingsName = '"dbSettings".settingProgam' + numOfProgram
+    postData.push(escape(settingsName + '.setRightDistance') + '=' + param1Val);
+    postData.push(escape(settingsName + '.setVelocity') + '=' + param2Val);
+    postData.push(escape(settingsName + '.setWashVelocity') + '=' + param3Val);
+    postData.push(escape(settingsName + '.setWashRightPosition') + '=' + param4Val);
+    postData.push(escape(settingsName + '.setWashLeftPosition') + '=' + param5Val); 
+
+    const url = 'IOVariables.htm'; 
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+    resetSettingsStyle()
+}
+function submitRobotForm() {
+    let paramString = '#param-robot-'
+    const param1Val = $(paramString +'1').val();
+    const param2Val = $(paramString +'2').val();
+    const param3Val = $(paramString +'3').val();
+    const param4Val = $(paramString +'4').val();
+    const param5Val = $(paramString +'5').val();
+    const param6Val = $(paramString +'6').val();
+    const param7Val = $(paramString +'7').val();
+    const param8Val = $(paramString +'8').val();
+    const param9Val = $(paramString +'9').val();
+    const param10Val = $(paramString +'10').val();
+    const param11Val = $(paramString +'11').val();
+    const param12Val = $(paramString +'12').val();
+    const param13Val = $(paramString +'13').val();
+    const param14Val = $(paramString +'14').val();
+    const param15Val = $(paramString +'15').val();
+
+    let postData = [];
+    let settingsName = '"dbSettings"'
+    postData.push(escape(settingsName + '.setManualVelocity') + '=' + param1Val);
+    postData.push(escape(settingsName + '.frontLimitToSetRobot') + '=' + param2Val);
+    postData.push(escape(settingsName + '.numWashesBeforeStart') + '=' + param3Val);
+    postData.push(escape(settingsName + '.numWashesAtTheEnd') + '=' + param4Val);
+    postData.push(escape(settingsName + '.leftSWLimit') + '=' + param5Val); 
+    postData.push(escape(settingsName + '.rightSWLimit') + '=' + param6Val); 
+    postData.push(escape(settingsName + '.setRobotVelocity') + '=' + param7Val); 
+    postData.push(escape(settingsName + '.allignVelocity') + '=' + param8Val); 
+    postData.push(escape(settingsName + '.maxRightDistanceToCorrecRobotDriving') + '=' + param9Val); 
+    postData.push(escape(settingsName + '.minRightDistanceToCorrecRobotDriving') + '=' + param10Val); 
+    postData.push(escape(settingsName + '.diffDistanceToAllign') + '=' + param11Val); 
+    postData.push(escape(settingsName + '.minDistanceToFullWashAngle') + '=' + param12Val); 
+    postData.push(escape(settingsName + '.distanceToResetSWLimitOfWM') + '=' + param13Val); 
+    postData.push(escape(settingsName + '.correctFrontDistance') + '=' + param14Val); 
+    postData.push(escape(settingsName + '.maxRobotSteps') + '=' + param15Val); 
+
+    const url = 'IOVariables.htm'; 
+    const sdata = postData.join('&');
+    $.post(url,sdata);
+    closeSettingsRobot()
+}
+
+// function for change distance values on the panel based on PLC variables  
+function positionRobot(variables) {
+    leftDistance.textContent = variables[3]
+    frontDistance.textContent = variables[4]
+    rightTopDistance.textContent = variables[5]
+    rightBottomDistance.textContent = variables[6]
+}
