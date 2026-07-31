@@ -1,3 +1,1 @@
-1. Dodać zmienną Trybu pracy i napisać funkcję dla niej.
-2. Dodać zmienną Stan baterii i napisać funkcję dla niej.
-3. Dodać zmienną versji programu.
+

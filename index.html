@@ -59,8 +59,8 @@
                 <div class="info-tile status-tile">
                     <div class="card-title" id="systemStatusTitle">Status systemu</div>
                     <div class="status-badge">
-                        <img src="./img/check.svg" alt="">
-                        <div>
+                        <img id="statusIcon" src="./img/check.svg" alt="">
+                        <div class="status-text-block">
                             <strong id="error-description">SYSTEM GOTOWY</strong>
                             <small id="noErrors">Brak błędów</small>
                         </div>
@@ -79,13 +79,16 @@
                     <div class="card-title" id="batteryTitle">Stan baterii</div>
 
                     <div class="battery-display battery-full">
-                        <div class="battery-icon">
-                            <div class="battery-fill"></div>
+                        <div class="battery-icon-shell">
+                            <div class="battery-icon" aria-hidden="true">
+                                <div class="battery-fill"></div>
+                            </div>
+                            <img id="batteryIcon" class="battery-icon-image" src="" alt="">
                         </div>
 
                         <div>
-                            <strong id="batteryState">NAŁADOWANA</strong>
-                            <small id="batteryInfo">Bateria gotowa do pracy</small>
+                            <strong id="batteryState"></strong>
+                            <small id="batteryInfo"></small>
                         </div>
                     </div>
                 </div>
@@ -119,22 +122,22 @@
             <div class="action-grid">
                 <button id="stopBtn" class="btn-action btn-stop">
                     <img id="stopIcon" src="./img/stop.svg" alt="">
-                    <span id="stopBtn">STOP</span>
+                    <span id="stopBtnLabel">STOP</span>
                 </button>
 
                 <button id="pauseBtn" class="btn-action btn-pause">
                     <img id="pauseIcon" src="./img/pause.svg" alt="">
-                    <span id="pauseBtn">PAUZA</span>
+                    <span id="pauseBtnLabel">PAUZA</span>
                 </button>
 
                 <button id="resetBtn" class="btn-action btn-reset">
                     <img id="resetIcon" src="./img/reset.svg" alt="">
-                    <span id="resetBtn">RESET</span>
+                    <span id="resetBtnLabel">RESET</span>
                 </button>
 
                 <button id="drainBtn" class="btn-action btn-water">
                     <img id="waterIcon" src="./img/droplet.svg" alt="">
-                    <span id="waterBtn">SPUST WODY</span>
+                    <span id="waterBtnLabel">SPUST WODY</span>
                 </button>
             </div>
         </section>
@@ -323,10 +326,22 @@
             <div class="settings-overlay" aria-hidden="true"></div>
 
             <div class="robot-visual">
-                <div id="right-top-distance" class="dim left-top"> <span class="unitMm">mm</span></div>
-                <div id="right-bottom-distance" class="dim left-bottom"> <span class="unitMm">mm</span></div>
-                <div id="left-distance" class="dim right"> <span class="unitMm">mm</span></div>
-                <div id="front-distance" class="dim bottom"> <span class="unitMm">mm</span></div>
+                <div id="right-top-distance" class="dim left-top">
+                    <span class="distance-value"></span>
+                    <span class="unitMm">mm</span>
+                </div>
+                <div id="right-bottom-distance" class="dim left-bottom">
+                    <span class="distance-value"></span>
+                    <span class="unitMm">mm</span>
+                </div>
+                <div id="left-distance" class="dim right">
+                    <span class="distance-value"></span>
+                    <span class="unitMm">mm</span>
+                </div>
+                <div id="front-distance" class="dim bottom">
+                    <span class="distance-value"></span>
+                    <span class="unitMm">mm</span>
+                </div>
 
                 <div class="blueprint-box">
                     <img id="robotImage"
@@ -336,7 +351,8 @@
             </div>
 
             <div class="work-time" id="workTime">
-                Czas pracy robota: 2H : 1M
+                <span id="workTimeText">Czas pracy robota: 2H : 1M</span>
+                <span class="software-version" id="softwareVersion">V1.0.0</span>
             </div>
         </aside>
     </main>

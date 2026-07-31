@@ -5,11 +5,14 @@ const translations = {
         systemStatusTitle: "Status systemu",
         systemReady: "SYSTEM GOTOWY",
         noErrors: "Brak błędów",
+        systemError: "BŁĄD",
+        error: "Błąd",
         workModeTitle: "Tryb pracy",
         manualMode: "Tryb Manualny",
         batteryTitle: "Stan baterii",
         batteryState: "NAŁADOWANA",
         batteryInfo: "Bateria gotowa do pracy",
+        lowBattery: "Niski poziom baterii",
         startProgramTitle: "Start Programu",
         btnProgram1: "Program 1",
         btnProgram2: "Program 2",
@@ -62,11 +65,15 @@ const translations = {
         systemStatusTitle: "System Status",
         systemReady: "SYSTEM READY",
         noErrors: "No errors",
+        systemError: "ERROR",
+        error: "Error",
         workModeTitle: "Operating Mode",
         manualMode: "Manual Mode",
+        automaticMode: "Automatic Mode",
         batteryTitle: "Battery Status",
         batteryState: "CHARGED",
         batteryInfo: "Battery ready for operation",
+        lowBattery: "Low battery level",
         startProgramTitle: "Program Start",
         btnProgram1: "Program 1",
         btnProgram2: "Program 2",
@@ -119,11 +126,15 @@ const translations = {
         systemStatusTitle: "Systemstatus",
         systemReady: "SYSTEM BEREIT",
         noErrors: "Keine Fehler",
+        systemError: "FEHLER",
+        error: "Fehler",
         workModeTitle: "Betriebsmodus",
         manualMode: "Manueller Modus",
+        automaticMode: "Automatischer Modus",
         batteryTitle: "Batteriestatus",
         batteryState: "GELADEN",
         batteryInfo: "Batterie betriebsbereit",
+        lowBattery: "Niedriger Batteriestand",
         startProgramTitle: "Programmstart",
         btnProgram1: "Programm 1",
         btnProgram2: "Programm 2",
@@ -176,11 +187,15 @@ const translations = {
         systemStatusTitle: "État du système",
         systemReady: "SYSTÈME PRÊT",
         noErrors: "Aucune erreur",
+        systemError: "ERREUR",
+        error: "Erreur",
         workModeTitle: "Mode de travail",
         manualMode: "Mode manuel",
+        automaticMode: "Mode automatique",
         batteryTitle: "État de la batterie",
         batteryState: "CHARGÉE",
         batteryInfo: "Batterie prête au travail",
+        lowBattery: "Niveau de batterie faible",
         startProgramTitle: "Démarrage du programme",
         btnProgram1: "Programme 1",
         btnProgram2: "Programme 2",
@@ -233,11 +248,15 @@ const translations = {
         systemStatusTitle: "Estado del sistema",
         systemReady: "SISTEMA LISTO",
         noErrors: "Sin errores",
+        systemError: "ERROR",
+        error: "Error",
         workModeTitle: "Modo de trabajo",
         manualMode: "Modo manual",
+        automaticMode: "Modo automático",
         batteryTitle: "Estado de la batería",
         batteryState: "CARGADA",
         batteryInfo: "Batería lista para trabajar",
+        lowBattery: "Nivel de batería bajo",
         startProgramTitle: "Inicio del programa",
         btnProgram1: "Programa 1",
         btnProgram2: "Programa 2",
@@ -290,11 +309,15 @@ const translations = {
         systemStatusTitle: "Starea sistemului",
         systemReady: "SISTEM GATA",
         noErrors: "Fără erori",
+        systemError: "ERORARE",
+        error: "Eroare",
         workModeTitle: "Mod de operare",
         manualMode: "Mod manual",
+        automaticMode: "Mod automat",
         batteryTitle: "Starea bateriei",
         batteryState: "ÎNCĂRCATĂ",
         batteryInfo: "Bateria este gata de lucru",
+        lowBattery: "Nivel scăzut al bateriei",
         startProgramTitle: "Pornire program",
         btnProgram1: "Program 1",
         btnProgram2: "Program 2",
@@ -347,11 +370,15 @@ const translations = {
         systemStatusTitle: "Състояние на системата",
         systemReady: "СИСТЕМАТА Е ГОТОВА",
         noErrors: "Няма грешки",
+        systemError: "ГРЕШКА",
+        error: "Грешка",
         workModeTitle: "Режим на работа",
         manualMode: "Ръчен режим",
+        automaticMode: "Автоматичен режим",
         batteryTitle: "Състояние на батерията",
         batteryState: "ЗАРЕДЕНА",
         batteryInfo: "Батерията е готова за работа",
+        lowBattery: "Ниско ниво на батерията",
         startProgramTitle: "Стартиране на програма",
         btnProgram1: "Програма 1",
         btnProgram2: "Програма 2",
@@ -404,11 +431,15 @@ const translations = {
         systemStatusTitle: "Rendszerállapot",
         systemReady: "RENDSZER KÉSZ",
         noErrors: "Nincsenek hibák",
+        systemError: "HIBA",
+        error: "Hiba",
         workModeTitle: "Üzemmód",
         manualMode: "Kézi mód",
+        automaticMode: "Automatikus mód",
         batteryTitle: "Akkumulátor állapota",
         batteryState: "FELTÖLTVE",
         batteryInfo: "Az akkumulátor munkára kész",
+        lowBattery: "Alacsony akkumulátorszint",
         startProgramTitle: "Program indítása",
         btnProgram1: "Program 1",
         btnProgram2: "Program 2",
@@ -462,7 +493,11 @@ const yellowDot = document.querySelector('#yellowDot')
 const greenDot = document.querySelector('#greenDot')
 const errorDescription = document.querySelector('#error-description')
 const noErrors = document.querySelector('#noErrors')
+const batteryState = document.querySelector('#batteryState')
+const batteryInfo = document.querySelector('#batteryInfo')
+const batteryIcon = document.querySelector('#batteryIcon')
 const manualMode = document.querySelector('#manualMode')
+const pauseBtn = document.querySelector('#pauseBtn')
 const autoBtns = document.querySelector('#auto-btns')
 const autoBtn1 = document.querySelector('#auto-btn-1')
 const autoBtn2 = document.querySelector('#auto-btn-2')
@@ -470,23 +505,28 @@ const autoBtn3 = document.querySelector('#auto-btn-3')
 const configButtons = document.querySelectorAll(".config-btn");
 const settingsPrograms = document.querySelectorAll(".settings-programs");
 const closeButtons = document.querySelectorAll(".btn-popup");
-const leftDistance = document.querySelector('#left-distance')
-const frontDistance = document.querySelector('#front-distance')
-const rightTopDistance = document.querySelector('#right-top-distance')
-const rightBottomDistance = document.querySelector('#right-bottom-distance')
+const leftDistance = document.querySelector('#left-distance .distance-value')
+const frontDistance = document.querySelector('#front-distance .distance-value')
+const rightTopDistance = document.querySelector('#right-top-distance .distance-value')
+const rightBottomDistance = document.querySelector('#right-bottom-distance .distance-value')
+const workTimeText = document.querySelector('#workTimeText')
+const softwareVersion = document.querySelector('#softwareVersion')
 
 //connection with PLC //
 $(document).ready(function(){
     $.ajaxSetup({ cache: false });
 
+    loadInitialVersion()
     setInterval(updateData, 500)
 
     $('#stopBtn').click(function() {
         stopRobot()
     })
     $('#pauseBtn').click(function() {
-        updateData().then(vars=> {
-            pauseRobot(vars)
+        updateData().then(variables=> {
+            if (variables[11] == 1) {
+                pauseRobot(variables)
+            }
         })
     })
     $('#resetBtn').click(function() {
@@ -529,14 +569,55 @@ function updateData() {
     return $.get("IOVariablesUpdate.htm").then(result => {
         const variables = parsePLCVariables(result)
         error(variables)
+        lowVoltageBattery(variables)
         lights(variables)
+        updateWorkMode(variables)
         positionRobot(variables)
-        stateBtns(variables)
         return variables;
     })
 }
 function parsePLCVariables(result) {
     return result.split('\n').filter(line => line.trim() !== '')
+}
+
+function lowVoltageBattery(variables) {
+    if (!batteryState || !batteryInfo) {
+        return
+    }
+
+    const batteryTile = document.querySelector('.battery-display')
+    const lowVoltageIndex = 10
+    const lowVoltage = variables.length > lowVoltageIndex ? parseInt(variables[lowVoltageIndex], 10) : 0
+
+    if (lowVoltage === 1) {
+        const lang = document.documentElement.lang || 'pl'
+        const dictionary = translations[lang] || translations.pl
+        batteryState.textContent = dictionary.lowBattery || 'Niski poziom baterii'
+        batteryState.style.color = '#d92323'
+        batteryInfo.textContent = ''
+        if (batteryTile) {
+            batteryTile.classList.add('battery-display-error', 'battery-low')
+            batteryTile.classList.remove('battery-full')
+        }
+        if (batteryIcon) {
+            batteryIcon.src = './img/battery-quarter.svg'
+            batteryIcon.alt = ''
+        }
+    } else {
+        const lang = document.documentElement.lang || 'pl'
+        const dictionary = translations[lang] || translations.pl
+        batteryState.textContent = dictionary.batteryState
+        batteryState.style.color = ''
+        batteryInfo.textContent = dictionary.batteryInfo
+        if (batteryTile) {
+            batteryTile.classList.remove('battery-display-error', 'battery-low')
+            batteryTile.classList.add('battery-full')
+        }
+        if (batteryIcon) {
+            batteryIcon.src = ''
+            batteryIcon.alt = ''
+        }
+    }
 }
 
 // function for change lights on the panel based on PLC variables
@@ -559,7 +640,14 @@ function lights(variables) {
 }
 // parth of code for change language on the panel
 function setText(id, value) {
-    const element = document.getElementById(id);
+    const labelMap = {
+        stopBtn: 'stopBtnLabel',
+        pauseBtn: 'pauseBtnLabel',
+        resetBtn: 'resetBtnLabel',
+        waterBtn: 'waterBtnLabel'
+    };
+
+    const element = document.getElementById(labelMap[id] || id);
     if (element) {
         element.textContent = value;
     }
@@ -568,6 +656,12 @@ function changeLanguage(lang) {
     const dictionary = translations[lang] || translations.pl;
 
     Object.entries(dictionary).forEach(([key, value]) => {
+        if (key === "workTime") {
+            if (workTimeText) {
+                workTimeText.textContent = value;
+            }
+            return;
+        }
         if (key === "unitMm") {
             document.querySelectorAll(".unitMm").forEach((element) => {
                 element.textContent = value;
@@ -766,31 +860,111 @@ const errorDescriptionArray_hu = ['Vészleállítás',
 ]
 
 function error(variables) {
+    const statusBadge = document.querySelector('.status-badge')
+    const statusIcon = document.querySelector('#statusIcon')
+    const lang = document.documentElement.lang || 'pl'
+    const dictionary = translations[lang] || translations.pl
+
     if (variables[7] == 100) {
-        errorDescription.textContent = 'SYSTEM GOTOWY'
-        noErrors.textContent = 'Brak błędów'
+        errorDescription.textContent = dictionary.systemReady || 'SYSTEM GOTOWY'
+        noErrors.textContent = dictionary.noErrors || 'Brak błędów'
+        errorDescription.style.color = ''
+        noErrors.style.color = ''
+        errorDescription.classList.remove('error-text')
+        noErrors.classList.remove('error-text')
+        if (statusBadge) {
+            statusBadge.classList.remove('status-badge-error')
+        }
+        if (statusIcon) {
+            statusIcon.src = './img/check.svg'
+            statusIcon.alt = 'Status OK'
+        }
     } else {
-        errorDescription.classList.add('Błąd')
+        errorDescription.textContent = dictionary.systemError || 'BŁĄD'
+        noErrors.textContent = dictionary.error || 'Błąd'
+        errorDescription.style.color = '#d92323'
+        noErrors.style.color = '#d92323'
+        errorDescription.classList.add('error-text')
+        noErrors.classList.add('error-text')
+        if (statusBadge) {
+            statusBadge.classList.add('status-badge-error')
+        }
+        if (statusIcon) {
+            statusIcon.src = './img/circle-xmark.svg'
+            statusIcon.alt = 'Status error'
+        }
+
         let item = parseInt(variables[8])
-        let array =  errorDescriptionArray_pl
-        if (document.documentElement.lang === 'en') {
+        let array = errorDescriptionArray_pl
+        if (lang === 'en') {
             array = errorDescriptionArray_en
-        } else if (document.documentElement.lang === 'de') {
+        } else if (lang === 'de') {
             array = errorDescriptionArray_de
-        } else if (document.documentElement.lang === 'fr') {
+        } else if (lang === 'fr') {
             array = errorDescriptionArray_fr
-        } else if (document.documentElement.lang === 'es') {
+        } else if (lang === 'es') {
             array = errorDescriptionArray_es
-        } else if (document.documentElement.lang === 'ro') {
+        } else if (lang === 'ro') {
             array = errorDescriptionArray_ro
-        } else if (document.documentElement.lang === 'bg') {
+        } else if (lang === 'bg') {
             array = errorDescriptionArray_bg
-        } else if (document.documentElement.lang === 'hu') {
+        } else if (lang === 'hu') {
             array = errorDescriptionArray_hu
         }
-        errorDescription.textContent = array[item]
-    
+
+        noErrors.textContent = array[item]
     }
+}
+// function for change work mode on the panel based on PLC variables
+function updateWorkMode(variables) {
+    if (!manualMode) {
+        return
+    }
+
+    const modeOn = variables[11]
+    const lang = document.documentElement.lang || 'pl'
+    const dictionary = translations[lang] || translations.pl
+    const modeText = modeOn == 1
+        ? (dictionary.automaticMode || 'Tryb Automatyczny')
+        : (dictionary.manualMode || 'Tryb Manualny')
+
+    manualMode.textContent = modeText
+}
+
+function formatSoftwareVersion(value) {
+    const numericValue = parseInt(value, 10)
+
+    if (Number.isNaN(numericValue)) {
+        return 'V0.0.0'
+    }
+
+    const digits = String(numericValue).split('')
+    while (digits.length < 3) {
+        digits.push('0')
+    }
+
+    return `V${digits[0]}.${digits[1]}.${digits[2]}`
+}
+
+function updateSoftwareVersion(value) {
+    if (!softwareVersion || value === undefined || value === null || value === '') {
+        return
+    }
+
+    softwareVersion.textContent = formatSoftwareVersion(value)
+}
+
+function loadInitialVersion() {
+    return $.get("IOVariables.htm")
+        .then(result => {
+            const variables = parsePLCVariables(result)
+            const rawVersion = variables.length > 0 ? variables[variables.length - 1] : ''
+            updateSoftwareVersion(rawVersion)
+            return rawVersion
+        })
+        .catch(() => {
+            updateSoftwareVersion('')
+        })
 }
 // function for send PLC variable to start auto program based on button click
 function autoPrograms(e) {
@@ -883,6 +1057,10 @@ function closeAllWindows() {
     configButtons.forEach(btn => {
         btn.classList.remove("active");
     });
+}
+
+function closeSettingsRobot() {
+    closeAllWindows();
 }
 
 function centerWindow(windowBox) {
@@ -984,7 +1162,7 @@ function submitForm(numOfProgram) {
     const url = 'IOVariables.htm'; 
     const sdata = postData.join('&');
     $.post(url,sdata);
-    resetSettingsStyle()
+    closeSettingsRobot();
 }
 function submitRobotForm() {
     let paramString = '#param-robot-'
