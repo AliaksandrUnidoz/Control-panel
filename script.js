@@ -577,14 +577,24 @@ function updateData() {
     })
 }
 function parsePLCVariables(result) {
-    return result.split('\n').filter(line => line.trim() !== '')
+    return result
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(line => line !== '')
+        .map(line => {
+            const match = line.match(/(-?\d+(?:\.\d+)?)/)
+            if (match) {
+                return match[1]
+            }
+
+            return line.replace(/^<!--.*?-->/, '').trim()
+        })
 }
 
 function lowVoltageBattery(variables) {
     if (!batteryState || !batteryInfo) {
         return
     }
-
     const batteryTile = document.querySelector('.battery-display')
     const lowVoltageIndex = 10
     const lowVoltage = variables.length > lowVoltageIndex ? parseInt(variables[lowVoltageIndex], 10) : 0
@@ -865,7 +875,7 @@ function error(variables) {
     const lang = document.documentElement.lang || 'pl'
     const dictionary = translations[lang] || translations.pl
 
-    if (variables[7] == 100) {
+    if (variables[8] == 100) {
         errorDescription.textContent = dictionary.systemReady || 'SYSTEM GOTOWY'
         noErrors.textContent = dictionary.noErrors || 'Brak błędów'
         errorDescription.style.color = ''
@@ -958,7 +968,7 @@ function loadInitialVersion() {
     return $.get("IOVariables.htm")
         .then(result => {
             const variables = parsePLCVariables(result)
-            const rawVersion = variables.length > 0 ? variables[variables.length - 1] : ''
+            const rawVersion = variables.length > 0 ? variables[49] : ''
             updateSoftwareVersion(rawVersion)
             return rawVersion
         })
@@ -1071,17 +1081,75 @@ function centerWindow(windowBox) {
 
 configButtons.forEach((button,index)=>{
     button.addEventListener("click",()=>{
+        readIOVariablesForSettingsForm(index + 1);
         const popup = settingsPrograms[index];
         if(popup.classList.contains("active-program")){
             closeAllWindows();
-        }else{
-            closeAllWindows();
+            return;
+        }
+
+        closeAllWindows();
+        requestAnimationFrame(() => {
             popup.classList.add("active-program");
             button.classList.add("active");
             centerWindow(popup);
-        }
+        });
     });
 });
+
+// programNumber 1, 2, 3, is for settings
+// prgoramNumber 4 is for advanced settings
+function readIOVariablesForSettingsForm(programNumber) {
+    const url = 'IOVariables.htm';
+    $.get(url, function(data) {
+        const variables = parsePLCVariables(data);
+
+        if (programNumber >= 1 && programNumber <= 3) {
+            const baseIndex = 9 + (programNumber - 1) * 5;
+            const fieldIds = [
+                `#param${programNumber}-1`,
+                `#param${programNumber}-2`,
+                `#param${programNumber}-3`,
+                `#param${programNumber}-4`,
+                `#param${programNumber}-5`
+            ];
+
+            fieldIds.forEach((selector, index) => {
+                const value = variables[baseIndex + index];
+                if (value !== undefined) {
+                    $(selector).val(value);
+                }
+            });
+        }
+
+        if (programNumber === 4) {
+            const advancedFieldMap = [
+                ['#param-robot-1', 24],
+                ['#param-robot-2', 25],
+                ['#param-robot-3', 26],
+                ['#param-robot-4', 27],
+                ['#param-robot-5', 28],
+                ['#param-robot-6', 29],
+                ['#param-robot-7', 30],
+                ['#param-robot-8', 31],
+                ['#param-robot-9', 32],
+                ['#param-robot-10', 33],
+                ['#param-robot-11', 34],
+                ['#param-robot-12', 35],
+                ['#param-robot-13', 36],
+                ['#param-robot-14', 37],
+                ['#param-robot-15', 38]
+            ];
+
+            advancedFieldMap.forEach(([selector, index]) => {
+                const value = variables[index];
+                if (value !== undefined) {
+                    $(selector).val(value);
+                }
+            });
+        }
+    });
+}
 
 closeButtons.forEach(button=>{
     button.addEventListener("click",()=>{

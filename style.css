@@ -932,6 +932,7 @@ button {
 .robot-visual {
     position: relative;
     height: 250px;
+    min-height: 250px;
     background:
         linear-gradient(rgba(0, 159, 227, 0.08) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 159, 227, 0.08) 1px, transparent 1px),
@@ -944,19 +945,29 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    isolation: isolate;
 }
 
 .blueprint-box {
     position: relative;
     z-index: 2;
+    width: min(100%, 220px);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .blueprint-box img {
-    height: 285px;
+    display: block;
+    height: 220px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
+    object-position: center;
     filter: drop-shadow(0 14px 22px rgba(21, 42, 62, 0.15));
+    will-change: transform;
 }
 
 .dim {
@@ -977,6 +988,10 @@ button {
     line-height: 1;
     pointer-events: none;
     white-space: nowrap;
+    backdrop-filter: blur(2px);
+    max-width: min(42%, 130px);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dim .distance-value {
@@ -993,22 +1008,25 @@ button {
 }
 
 .left-top {
-    left: 14px;
+    left: 10px;
     top: 34%;
+    transform: translateY(-50%);
 }
 
 .left-bottom {
-    left: 14px;
-    top: 55%;
+    left: 10px;
+    top: 58%;
+    transform: translateY(-50%);
 }
 
 .right {
-    right: 14px;
-    top: 45%;
+    right: 10px;
+    top: 46%;
+    transform: translateY(-50%);
 }
 
 .bottom {
-    bottom: 14px;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
 }
