@@ -250,6 +250,25 @@ button {
     min-width: 0;
 }
 
+.main-panel {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.main-panel * {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.main-panel .btn-prog,
+.main-panel .btn-action,
+.side-panel .config-btn,
+.language-button,
+.language-option {
+    cursor: pointer;
+}
+
 .priority-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1099,12 +1118,16 @@ button:active {
 }
 
 @media (max-width: 1100px) {
-    .dashboard-grid,
-    .priority-grid {
+    .dashboard-grid {
         grid-template-columns: 1fr;
     }
+
+    .priority-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .action-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1230,11 +1253,11 @@ button:active {
     }
 
     .action-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .settings-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .btn-action {

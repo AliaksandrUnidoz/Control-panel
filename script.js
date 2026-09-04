@@ -47,6 +47,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Dystans między prawym czujnikiem a ramieniem:",
         advancedFrontCorrectionLabel: "Korekta dystansu z przodu:",
         advancedStepsLabel: "Ilość kroków:",
+        advancedWashVelocityLabel: "Prędkość ramienia w trybie ręcznym:",
         advancedWashCountTitle: "Ilość mycia",
         advancedWashStartLabel: "start:",
         advancedWashStopLabel: "stop:",
@@ -56,6 +57,7 @@ const translations = {
         advancedRobotSpeedTitle: "Prędkość robota przy",
         advancedPositioningLabel: "pozycjonowaniu:",
         advancedAlignmentLabel: "wyrównaniu:",
+        advancedTurningLabel: "skręcaniu:",
         advancedDriveHysteresisTitle: "Histereza jazdy robota",
         advancedPlusLabel: "plus:",
         advancedMinusLabel: "minus:"
@@ -108,6 +110,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Distance between the right sensor and the arm:",
         advancedFrontCorrectionLabel: "Front distance correction:",
         advancedStepsLabel: "Number of steps:",
+        advancedWashVelocityLabel: "Arm speed in manual mode:",
         advancedWashCountTitle: "Washing count",
         advancedWashStartLabel: "start:",
         advancedWashStopLabel: "stop:",
@@ -117,6 +120,7 @@ const translations = {
         advancedRobotSpeedTitle: "Robot speed when",
         advancedPositioningLabel: "positioning:",
         advancedAlignmentLabel: "aligning:",
+        advancedTurningLabel: "turning:",
         advancedDriveHysteresisTitle: "Robot drive hysteresis",
         advancedPlusLabel: "plus:",
         advancedMinusLabel: "minus:"
@@ -169,6 +173,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Abstand zwischen dem rechten Sensor und dem Arm:",
         advancedFrontCorrectionLabel: "Korrektur des Abstands von vorne:",
         advancedStepsLabel: "Schrittanzahl:",
+        advancedWashVelocityLabel: "Armgeschwindigkeit im Handmodus:",
         advancedWashCountTitle: "Waschanzahl",
         advancedWashStartLabel: "start:",
         advancedWashStopLabel: "stopp:",
@@ -178,6 +183,7 @@ const translations = {
         advancedRobotSpeedTitle: "Robotergeschwindigkeit bei",
         advancedPositioningLabel: "Positionierung:",
         advancedAlignmentLabel: "Ausrichtung:",
+        advancedTurningLabel: "Drehung:",
         advancedDriveHysteresisTitle: "Roboterfahr-Hysterese",
         advancedPlusLabel: "plus:",
         advancedMinusLabel: "minus:"
@@ -197,9 +203,9 @@ const translations = {
         batteryInfo: "Batterie prête au travail",
         lowBattery: "Niveau de batterie faible",
         startProgramTitle: "Démarrage du programme",
-        btnProgram1: "Programme 1",
-        btnProgram2: "Programme 2",
-        btnProgram3: "Programme 3",
+        btnProgram1: "Prog 1",
+        btnProgram2: "Prog 2",
+        btnProgram3: "Prog 3",
         operationControlTitle: "Contrôle des opérations",
         stopBtn: "STOP",
         pauseBtn: "PAUSE",
@@ -230,6 +236,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Distance entre le capteur droit et le bras :",
         advancedFrontCorrectionLabel: "Correction de la distance depuis l'avant :",
         advancedStepsLabel: "Nombre de pas :",
+        advancedWashVelocityLabel: "Vitesse du bras en mode manuel :",
         advancedWashCountTitle: "Nombre de lavages",
         advancedWashStartLabel: "début :",
         advancedWashStopLabel: "fin :",
@@ -239,6 +246,7 @@ const translations = {
         advancedRobotSpeedTitle: "Vitesse du robot lors de",
         advancedPositioningLabel: "positionnement :",
         advancedAlignmentLabel: "alignement :",
+        advancedTurningLabel: "tournant :",
         advancedDriveHysteresisTitle: "Hystérésis de conduite du robot",
         advancedPlusLabel: "plus :",
         advancedMinusLabel: "moins :"
@@ -291,6 +299,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Distancia entre el sensor derecho y el brazo:",
         advancedFrontCorrectionLabel: "Corrección de distancia desde el frente:",
         advancedStepsLabel: "Número de pasos:",
+        advancedWashVelocityLabel: "Velocidad del brazo en modo manual:",
         advancedWashCountTitle: "Cantidad de lavado",
         advancedWashStartLabel: "inicio:",
         advancedWashStopLabel: "fin:",
@@ -300,6 +309,7 @@ const translations = {
         advancedRobotSpeedTitle: "Velocidad del robot al",
         advancedPositioningLabel: "posicionamiento:",
         advancedAlignmentLabel: "alineación:",
+        advancedTurningLabel: "girando:",
         advancedDriveHysteresisTitle: "Histéresis de conducción del robot",
         advancedPlusLabel: "más:",
         advancedMinusLabel: "menos:"
@@ -352,6 +362,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Distanța dintre senzorul drept și braț:",
         advancedFrontCorrectionLabel: "Corecția distanței din față:",
         advancedStepsLabel: "Număr de pași:",
+        advancedWashVelocityLabel: "Viteza brațului în modul manual:",
         advancedWashCountTitle: "Număr de spălări",
         advancedWashStartLabel: "start:",
         advancedWashStopLabel: "stop:",
@@ -361,6 +372,7 @@ const translations = {
         advancedRobotSpeedTitle: "Viteza robotului la",
         advancedPositioningLabel: "poziționare:",
         advancedAlignmentLabel: "aliniere:",
+        advancedTurningLabel: "întoarcere:",
         advancedDriveHysteresisTitle: "Histereză de conducere a robotului",
         advancedPlusLabel: "plus:",
         advancedMinusLabel: "minus:"
@@ -413,6 +425,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Разстояние между десния сензор и ръката:",
         advancedFrontCorrectionLabel: "Корекция на разстоянието отпред:",
         advancedStepsLabel: "Брой стъпки:",
+        advancedWashVelocityLabel: "Скорост на ръката в ръчен режим:",
         advancedWashCountTitle: "Брой измивания",
         advancedWashStartLabel: "начало:",
         advancedWashStopLabel: "край:",
@@ -422,6 +435,7 @@ const translations = {
         advancedRobotSpeedTitle: "Скорост на робота при",
         advancedPositioningLabel: "позициониране:",
         advancedAlignmentLabel: "подравняване:",
+        advancedTurningLabel: "завъртане:",
         advancedDriveHysteresisTitle: "Хистерезис на движение на робота",
         advancedPlusLabel: "плюс:",
         advancedMinusLabel: "минус:"
@@ -474,6 +488,7 @@ const translations = {
         advancedSensorArmDistanceLabel: "Távolság a jobb érzékelő és a kar között:",
         advancedFrontCorrectionLabel: "Elülső távolság korrekciója:",
         advancedStepsLabel: "Lépések száma:",
+        advancedWashVelocityLabel: "Kar sebessége kézi üzemmódban:",
         advancedWashCountTitle: "Mosások száma",
         advancedWashStartLabel: "start:",
         advancedWashStopLabel: "stop:",
@@ -483,6 +498,7 @@ const translations = {
         advancedRobotSpeedTitle: "Robot sebessége",
         advancedPositioningLabel: "pozicionálás:",
         advancedAlignmentLabel: "igazítás:",
+        advancedTurningLabel: "fordulás:",
         advancedDriveHysteresisTitle: "Robot meghajtás hiszterézis",
         advancedPlusLabel: "plusz:",
         advancedMinusLabel: "mínusz:"
@@ -1138,7 +1154,9 @@ function readIOVariablesForSettingsForm(programNumber) {
                 ['#param-robot-12', 35],
                 ['#param-robot-13', 36],
                 ['#param-robot-14', 37],
-                ['#param-robot-15', 38]
+                ['#param-robot-15', 38],
+                ['#param-robot-16', 39],
+                ['#param-robot-17', 40]
             ];
 
             advancedFieldMap.forEach(([selector, index]) => {
@@ -1250,6 +1268,7 @@ function submitRobotForm() {
     const param14Val = $(paramString +'14').val();
     const param15Val = $(paramString +'15').val();
     const param16Val = $(paramString +'16').val();
+    const param17Val = $(paramString +'17').val();
 
     let postData = [];
     let settingsName = '"dbSettings"'
@@ -1269,6 +1288,7 @@ function submitRobotForm() {
     postData.push(escape(settingsName + '.allignVelocity') + '=' + param14Val); 
     postData.push(escape(settingsName + '.maxRightDistanceToCorrecRobotDriving') + '=' + param15Val); 
     postData.push(escape(settingsName + '.minRightDistanceToCorrecRobotDriving') + '=' + param16Val); 
+    postData.push(escape(settingsName + '.turningVelocity') + '=' + param17Val); 
 
     const url = 'IOVariables.htm'; 
     const sdata = postData.join('&');
