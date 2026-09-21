@@ -540,7 +540,7 @@ $(document).ready(function(){
     })
     $('#pauseBtn').click(function() {
         updateData().then(variables=> {
-            if (variables[11] == 1) {
+            if (variables[9] == 1) {
                 pauseRobot(variables)
             }
         })
@@ -612,8 +612,9 @@ function lowVoltageBattery(variables) {
         return
     }
     const batteryTile = document.querySelector('.battery-display')
-    const lowVoltageIndex = 10
-    const lowVoltage = variables.length > lowVoltageIndex ? parseInt(variables[lowVoltageIndex], 10) : 0
+    // const lowVoltageIndex = 10
+    // const lowVoltage = variables.length > lowVoltageIndex ? parseInt(variables[lowVoltageIndex], 10) : 0
+    const lowVoltage = variables[7]
 
     if (lowVoltage === 1) {
         const lang = document.documentElement.lang || 'pl'
@@ -891,7 +892,7 @@ function error(variables) {
     const lang = document.documentElement.lang || 'pl'
     const dictionary = translations[lang] || translations.pl
 
-    if (variables[8] == 100) {
+    if (variables[7] == 100) {
         errorDescription.textContent = dictionary.systemReady || 'SYSTEM GOTOWY'
         noErrors.textContent = dictionary.noErrors || 'Brak błędów'
         errorDescription.style.color = ''
@@ -920,7 +921,7 @@ function error(variables) {
             statusIcon.alt = 'Status error'
         }
 
-        let item = parseInt(variables[8])
+        let item = parseInt(variables[7])
         let array = errorDescriptionArray_pl
         if (lang === 'en') {
             array = errorDescriptionArray_en
@@ -947,7 +948,7 @@ function updateWorkMode(variables) {
         return
     }
 
-    const modeOn = variables[11]
+    const modeOn = variables[9]
     const lang = document.documentElement.lang || 'pl'
     const dictionary = translations[lang] || translations.pl
     const modeText = modeOn == 1
@@ -1032,7 +1033,7 @@ function stopRobot() {
 function pauseRobot(vars) {
     const url = 'IOVariables.htm'; 
     let postData = [];
-    if (vars[9] == 1) {
+    if (vars[8] == 1) {
         // update style for pauze 
         pauseBtn.classList.add('pause')
         pauseBtn.classList.remove('wait') 

@@ -87,10 +87,10 @@ button {
 }
 
 .logo-area img {
-    height: 42px;
+    height: 45px;
     width: auto;
     border-radius: 6px;
-    padding: 6px 8px;
+    padding: 6px 0px;
 }
 
 .logo-area span {
@@ -284,7 +284,7 @@ button {
     background: var(--panel-soft);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 16px;
+    padding: 10px;
     min-width: 0;
 }
 
@@ -321,6 +321,7 @@ button {
 .battery-display {
     min-height: 84px;
     display: flex;
+    flex-wrap:wrap;
     align-items: center;
     gap: 12px;
     border-radius: var(--radius);
@@ -503,7 +504,7 @@ button {
     border: 1px solid #b8d3e7;
     color: var(--ink);
     border-radius: var(--radius);
-    padding: 16px 10px;
+    padding: 16px 5px;
     cursor: pointer;
     font-weight: 600;
     display: flex;
@@ -589,6 +590,7 @@ button {
 }
 
 .config-btn {
+    flex-wrap: wrap;
     min-height: 52px;
     background: #ffffff;
     border: 1px solid #b8d3e7;
@@ -828,6 +830,7 @@ button {
     .settings-program .field-pair > div {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     .settings-program .field-pair {
@@ -1138,51 +1141,38 @@ button:active {
     }
 
     .topbar {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "brand dots"
+            "brand language";
         align-items: center;
-        gap: 12px;
-        padding: 10px 12px;
-        border-top-width: 3px;
+        gap: 8px 12px;
     }
 
     .logo-area {
-        grid-column: auto;
-        grid-row: 1;
-        justify-content: flex-start;
-        text-align: left;
-        flex-direction: row;
-        gap: 10px;
+        grid-area: brand;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 6px;
         min-width: 0;
     }
 
     .logo-area img {
-        height: 34px;
-        padding: 3px 5px;
-        flex: 0 0 auto;
+        height: 45px;
     }
 
-    .logo-area span {
-        border-left: 2px solid var(--brand-blue);
-        border-top: 0;
-        padding-left: 10px;
-        padding-top: 0;
-        font-size: 20px;
-        font-weight: 700;
-        white-space: normal;
-        overflow-wrap: anywhere;
+     .logo-area span {
+        padding-left: 0;
+        border-left: 0;
+        font-size: 17px;
+        text-align: left;
     }
 
     .system-dots {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        justify-content: center;
-        justify-self: center;
-        gap: 14px;
-        padding: 12px 18px;
-        min-height: 54px;
-        width: max-content;
-        box-shadow: 0 10px 24px rgba(24, 47, 70, 0.1);    
-        margin-top: 12px;
+        grid-area: dots;
+        justify-self: end;
     }
 
     .dot {
@@ -1191,12 +1181,10 @@ button:active {
         border-width: 3px;
     }
 
-    .language-switcher {
-        grid-column: 2;
-        grid-row: 1;
-        width: auto;
-        min-width: 0;
+     .language-switcher {
+        grid-area: language;
         justify-self: end;
+        min-width: 26px;
     }
 
     .language-button {
@@ -1251,7 +1239,13 @@ button:active {
     .side-panel {
         padding: 16px;
     }
+    .priority-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .battery-tile {
+        grid-column: auto;
+    }
     .action-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
